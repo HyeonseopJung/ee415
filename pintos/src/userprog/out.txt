@@ -1,0 +1,4206 @@
+pintos -v -k -T 60 --qemu  --filesys-size=2 -p tests/userprog/args-none -a args-none -- -q  -f run args-none < /dev/null 2> tests/userprog/args-none.errors |tee tests/userprog/args-none.output
+Copying tests/userprog/args-none to scratch partition...
+qemu-system-i386 -device isa-debug-exit -hda /tmp/72FqjqCVRd.dsk -m 4 -net none -nographic -monitor null
+PiLo hda1
+Loading............
+Kernel command line: -q -f extract run args-none
+Pintos booting with 3,968 kB RAM...
+367 pages available in kernel pool.
+367 pages available in user pool.
+Calibrating timer...  113,254,400 loops/s.
+hda: 5,040 sectors (2 MB), model "QM00001", serial "QEMU HARDDISK"
+hda1: 207 sectors (103 kB), Pintos OS kernel (20)
+hda2: 4,096 sectors (2 MB), Pintos file system (21)
+hda3: 107 sectors (53 kB), Pintos scratch (22)
+filesys: using hda2
+scratch: using hda3
+Formatting file system...done.
+Boot complete.
+Extracting ustar archive from scratch device into file system...
+Putting 'args-none' into the file system...
+Erasing ustar archive...
+Executing 'args-none':
+(args) begin
+(args) argc = 1
+(args) argv[0] = 'args-none'
+(args) argv[1] = null
+(args) end
+args-none: exit(0)
+Execution of 'args-none' complete.
+Timer: 120 ticks
+Thread: 44 idle ticks, 60 kernel ticks, 17 user ticks
+hda2 (filesys): 65 reads, 218 writes
+hda3 (scratch): 106 reads, 2 writes
+Console: 946 characters output
+Keyboard: 0 keys pressed
+Exception: 0 page faults
+Powering off...
+perl -I../.. ../../tests/userprog/args-none.ck tests/userprog/args-none tests/userprog/args-none.result
+pass tests/userprog/args-none
+pintos -v -k -T 60 --qemu  --filesys-size=2 -p tests/userprog/args-single -a args-single -- -q  -f run 'args-single onearg' < /dev/null 2> tests/userprog/args-single.errors |tee tests/userprog/args-single.output
+Copying tests/userprog/args-single to scratch partition...
+qemu-system-i386 -device isa-debug-exit -hda /tmp/YtexghkD3A.dsk -m 4 -net none -nographic -monitor null
+PiLo hda1
+Loading............
+Kernel command line: -q -f extract run 'args-single onearg'
+Pintos booting with 3,968 kB RAM...
+367 pages available in kernel pool.
+367 pages available in user pool.
+Calibrating timer...  113,664,000 loops/s.
+hda: 5,040 sectors (2 MB), model "QM00001", serial "QEMU HARDDISK"
+hda1: 207 sectors (103 kB), Pintos OS kernel (20)
+hda2: 4,096 sectors (2 MB), Pintos file system (21)
+hda3: 107 sectors (53 kB), Pintos scratch (22)
+filesys: using hda2
+scratch: using hda3
+Formatting file system...done.
+Boot complete.
+Extracting ustar archive from scratch device into file system...
+Putting 'args-single' into the file system...
+Erasing ustar archive...
+Executing 'args-single onearg':
+(args) begin
+(args) argc = 2
+(args) argv[0] = 'args-single'
+(args) argv[1] = 'onearg'
+(args) argv[2] = null
+(args) end
+args-single: exit(0)
+Execution of 'args-single onearg' complete.
+Timer: 116 ticks
+Thread: 40 idle ticks, 63 kernel ticks, 14 user ticks
+hda2 (filesys): 65 reads, 218 writes
+hda3 (scratch): 106 reads, 2 writes
+Console: 1007 characters output
+Keyboard: 0 keys pressed
+Exception: 0 page faults
+Powering off...
+perl -I../.. ../../tests/userprog/args-single.ck tests/userprog/args-single tests/userprog/args-single.result
+pass tests/userprog/args-single
+pintos -v -k -T 60 --qemu  --filesys-size=2 -p tests/userprog/args-multiple -a args-multiple -- -q  -f run 'args-multiple some arguments for you!' < /dev/null 2> tests/userprog/args-multiple.errors |tee tests/userprog/args-multiple.output
+Copying tests/userprog/args-multiple to scratch partition...
+qemu-system-i386 -device isa-debug-exit -hda /tmp/vzL4NvX1aJ.dsk -m 4 -net none -nographic -monitor null
+PiLo hda1
+Loading............
+Kernel command line: -q -f extract run 'args-multiple some arguments for you!'
+Pintos booting with 3,968 kB RAM...
+367 pages available in kernel pool.
+367 pages available in user pool.
+Calibrating timer...  118,374,400 loops/s.
+hda: 5,040 sectors (2 MB), model "QM00001", serial "QEMU HARDDISK"
+hda1: 207 sectors (103 kB), Pintos OS kernel (20)
+hda2: 4,096 sectors (2 MB), Pintos file system (21)
+hda3: 107 sectors (53 kB), Pintos scratch (22)
+filesys: using hda2
+scratch: using hda3
+Formatting file system...done.
+Boot complete.
+Extracting ustar archive from scratch device into file system...
+Putting 'args-multiple' into the file system...
+Erasing ustar archive...
+Executing 'args-multiple some arguments for you!':
+(args) begin
+(args) argc = 5
+(args) argv[0] = 'args-multiple'
+(args) argv[1] = 'some'
+(args) argv[2] = 'arguments'
+(args) argv[3] = 'for'
+(args) argv[4] = 'you!'
+(args) argv[5] = null
+(args) end
+args-multiple: exit(0)
+Execution of 'args-multiple some arguments for you!' complete.
+Timer: 130 ticks
+Thread: 48 idle ticks, 65 kernel ticks, 18 user ticks
+hda2 (filesys): 65 reads, 218 writes
+hda3 (scratch): 106 reads, 2 writes
+Console: 1144 characters output
+Keyboard: 0 keys pressed
+Exception: 0 page faults
+Powering off...
+perl -I../.. ../../tests/userprog/args-multiple.ck tests/userprog/args-multiple tests/userprog/args-multiple.result
+pass tests/userprog/args-multiple
+pintos -v -k -T 60 --qemu  --filesys-size=2 -p tests/userprog/args-many -a args-many -- -q  -f run 'args-many a b c d e f g h i j k l m n o p q r s t u v' < /dev/null 2> tests/userprog/args-many.errors |tee tests/userprog/args-many.output
+Copying tests/userprog/args-many to scratch partition...
+qemu-system-i386 -device isa-debug-exit -hda /tmp/l7d6QzSmqp.dsk -m 4 -net none -nographic -monitor null
+PiLo hda1
+Loading............
+Kernel command line: -q -f extract run 'args-many a b c d e f g h i j k l m n o p q r s t u v'
+Pintos booting with 3,968 kB RAM...
+367 pages available in kernel pool.
+367 pages available in user pool.
+Calibrating timer...  121,446,400 loops/s.
+hda: 5,040 sectors (2 MB), model "QM00001", serial "QEMU HARDDISK"
+hda1: 207 sectors (103 kB), Pintos OS kernel (20)
+hda2: 4,096 sectors (2 MB), Pintos file system (21)
+hda3: 107 sectors (53 kB), Pintos scratch (22)
+filesys: using hda2
+scratch: using hda3
+Formatting file system...done.
+Boot complete.
+Extracting ustar archive from scratch device into file system...
+Putting 'args-many' into the file system...
+Erasing ustar archive...
+Executing 'args-many a b c d e f g h i j k l m n o p q r s t u v':
+(args) begin
+(args) argc = 23
+(args) argv[0] = 'args-many'
+(args) argv[1] = 'a'
+(args) argv[2] = 'b'
+(args) argv[3] = 'c'
+(args) argv[4] = 'd'
+(args) argv[5] = 'e'
+(args) argv[6] = 'f'
+(args) argv[7] = 'g'
+(args) argv[8] = 'h'
+(args) argv[9] = 'i'
+(args) argv[10] = 'j'
+(args) argv[11] = 'k'
+(args) argv[12] = 'l'
+(args) argv[13] = 'm'
+(args) argv[14] = 'n'
+(args) argv[15] = 'o'
+(args) argv[16] = 'p'
+(args) argv[17] = 'q'
+(args) argv[18] = 'r'
+(args) argv[19] = 's'
+(args) argv[20] = 't'
+(args) argv[21] = 'u'
+(args) argv[22] = 'v'
+(args) argv[23] = null
+(args) end
+args-many: exit(0)
+Execution of 'args-many a b c d e f g h i j k l m n o p q r s t u v' complete.
+Timer: 134 ticks
+Thread: 45 idle ticks, 61 kernel ticks, 29 user ticks
+hda2 (filesys): 65 reads, 218 writes
+hda3 (scratch): 106 reads, 2 writes
+Console: 1557 characters output
+Keyboard: 0 keys pressed
+Exception: 0 page faults
+Powering off...
+perl -I../.. ../../tests/userprog/args-many.ck tests/userprog/args-many tests/userprog/args-many.result
+pass tests/userprog/args-many
+pintos -v -k -T 60 --qemu  --filesys-size=2 -p tests/userprog/args-dbl-space -a args-dbl-space -- -q  -f run 'args-dbl-space two  spaces!' < /dev/null 2> tests/userprog/args-dbl-space.errors |tee tests/userprog/args-dbl-space.output
+Copying tests/userprog/args-dbl-space to scratch partition...
+qemu-system-i386 -device isa-debug-exit -hda /tmp/XO8_jloX1V.dsk -m 4 -net none -nographic -monitor null
+PiLo hda1
+Loading............
+Kernel command line: -q -f extract run 'args-dbl-space two  spaces!'
+Pintos booting with 3,968 kB RAM...
+367 pages available in kernel pool.
+367 pages available in user pool.
+Calibrating timer...  108,544,000 loops/s.
+hda: 5,040 sectors (2 MB), model "QM00001", serial "QEMU HARDDISK"
+hda1: 207 sectors (103 kB), Pintos OS kernel (20)
+hda2: 4,096 sectors (2 MB), Pintos file system (21)
+hda3: 107 sectors (53 kB), Pintos scratch (22)
+filesys: using hda2
+scratch: using hda3
+Formatting file system...done.
+Boot complete.
+Extracting ustar archive from scratch device into file system...
+Putting 'args-dbl-space' into the file system...
+Erasing ustar archive...
+Executing 'args-dbl-space two  spaces!':
+(args) begin
+(args) argc = 3
+(args) argv[0] = 'args-dbl-space'
+(args) argv[1] = 'two'
+(args) argv[2] = 'spaces!'
+(args) argv[3] = null
+(args) end
+args-dbl-space: exit(0)
+Execution of 'args-dbl-space two  spaces!' complete.
+Timer: 119 ticks
+Thread: 40 idle ticks, 65 kernel ticks, 15 user ticks
+hda2 (filesys): 65 reads, 218 writes
+hda3 (scratch): 106 reads, 2 writes
+Console: 1067 characters output
+Keyboard: 0 keys pressed
+Exception: 0 page faults
+Powering off...
+perl -I../.. ../../tests/userprog/args-dbl-space.ck tests/userprog/args-dbl-space tests/userprog/args-dbl-space.result
+pass tests/userprog/args-dbl-space
+pintos -v -k -T 60 --qemu  --filesys-size=2 -p tests/userprog/sc-bad-sp -a sc-bad-sp -- -q  -f run sc-bad-sp < /dev/null 2> tests/userprog/sc-bad-sp.errors |tee tests/userprog/sc-bad-sp.output
+Copying tests/userprog/sc-bad-sp to scratch partition...
+qemu-system-i386 -device isa-debug-exit -hda /tmp/TKrDGILOKa.dsk -m 4 -net none -nographic -monitor null
+PiLo hda1
+Loading............
+Kernel command line: -q -f extract run sc-bad-sp
+Pintos booting with 3,968 kB RAM...
+367 pages available in kernel pool.
+367 pages available in user pool.
+Calibrating timer...  114,892,800 loops/s.
+hda: 5,040 sectors (2 MB), model "QM00001", serial "QEMU HARDDISK"
+hda1: 207 sectors (103 kB), Pintos OS kernel (20)
+hda2: 4,096 sectors (2 MB), Pintos file system (21)
+hda3: 107 sectors (53 kB), Pintos scratch (22)
+filesys: using hda2
+scratch: using hda3
+Formatting file system...done.
+Boot complete.
+Extracting ustar archive from scratch device into file system...
+Putting 'sc-bad-sp' into the file system...
+Erasing ustar archive...
+Executing 'sc-bad-sp':
+(sc-bad-sp) begin
+sc-bad-sp: exit(-1)
+Execution of 'sc-bad-sp' complete.
+Timer: 113 ticks
+Thread: 45 idle ticks, 58 kernel ticks, 11 user ticks
+hda2 (filesys): 64 reads, 218 writes
+hda3 (scratch): 106 reads, 2 writes
+Console: 874 characters output
+Keyboard: 0 keys pressed
+Exception: 0 page faults
+Powering off...
+perl -I../.. ../../tests/userprog/sc-bad-sp.ck tests/userprog/sc-bad-sp tests/userprog/sc-bad-sp.result
+pass tests/userprog/sc-bad-sp
+pintos -v -k -T 60 --qemu  --filesys-size=2 -p tests/userprog/sc-bad-arg -a sc-bad-arg -- -q  -f run sc-bad-arg < /dev/null 2> tests/userprog/sc-bad-arg.errors |tee tests/userprog/sc-bad-arg.output
+Copying tests/userprog/sc-bad-arg to scratch partition...
+qemu-system-i386 -device isa-debug-exit -hda /tmp/YMqcfXGX7Z.dsk -m 4 -net none -nographic -monitor null
+PiLo hda1
+Loading............
+Kernel command line: -q -f extract run sc-bad-arg
+Pintos booting with 3,968 kB RAM...
+367 pages available in kernel pool.
+367 pages available in user pool.
+Calibrating timer...  104,345,600 loops/s.
+hda: 5,040 sectors (2 MB), model "QM00001", serial "QEMU HARDDISK"
+hda1: 207 sectors (103 kB), Pintos OS kernel (20)
+hda2: 4,096 sectors (2 MB), Pintos file system (21)
+hda3: 108 sectors (54 kB), Pintos scratch (22)
+filesys: using hda2
+scratch: using hda3
+Formatting file system...done.
+Boot complete.
+Extracting ustar archive from scratch device into file system...
+Putting 'sc-bad-arg' into the file system...
+Erasing ustar archive...
+Executing 'sc-bad-arg':
+(sc-bad-arg) begin
+sc-bad-arg: exit(-1)
+Execution of 'sc-bad-arg' complete.
+Timer: 102 ticks
+Thread: 43 idle ticks, 49 kernel ticks, 12 user ticks
+hda2 (filesys): 64 reads, 220 writes
+hda3 (scratch): 107 reads, 2 writes
+Console: 880 characters output
+Keyboard: 0 keys pressed
+Exception: 0 page faults
+Powering off...
+perl -I../.. ../../tests/userprog/sc-bad-arg.ck tests/userprog/sc-bad-arg tests/userprog/sc-bad-arg.result
+pass tests/userprog/sc-bad-arg
+pintos -v -k -T 60 --qemu  --filesys-size=2 -p tests/userprog/sc-boundary -a sc-boundary -- -q  -f run sc-boundary < /dev/null 2> tests/userprog/sc-boundary.errors |tee tests/userprog/sc-boundary.output
+Copying tests/userprog/sc-boundary to scratch partition...
+qemu-system-i386 -device isa-debug-exit -hda /tmp/IL5MTUDtkl.dsk -m 4 -net none -nographic -monitor null
+PiLo hda1
+Loading............
+Kernel command line: -q -f extract run sc-boundary
+Pintos booting with 3,968 kB RAM...
+367 pages available in kernel pool.
+367 pages available in user pool.
+Calibrating timer...  131,891,200 loops/s.
+hda: 5,040 sectors (2 MB), model "QM00001", serial "QEMU HARDDISK"
+hda1: 207 sectors (103 kB), Pintos OS kernel (20)
+hda2: 4,096 sectors (2 MB), Pintos file system (21)
+hda3: 111 sectors (55 kB), Pintos scratch (22)
+filesys: using hda2
+scratch: using hda3
+Formatting file system...done.
+Boot complete.
+Extracting ustar archive from scratch device into file system...
+Putting 'sc-boundary' into the file system...
+Erasing ustar archive...
+Executing 'sc-boundary':
+(sc-boundary) begin
+sc-boundary: exit(42)
+Execution of 'sc-boundary' complete.
+Timer: 115 ticks
+Thread: 43 idle ticks, 63 kernel ticks, 10 user ticks
+hda2 (filesys): 65 reads, 226 writes
+hda3 (scratch): 110 reads, 2 writes
+Console: 886 characters output
+Keyboard: 0 keys pressed
+Exception: 0 page faults
+Powering off...
+perl -I../.. ../../tests/userprog/sc-boundary.ck tests/userprog/sc-boundary tests/userprog/sc-boundary.result
+pass tests/userprog/sc-boundary
+pintos -v -k -T 60 --qemu  --filesys-size=2 -p tests/userprog/sc-boundary-2 -a sc-boundary-2 -- -q  -f run sc-boundary-2 < /dev/null 2> tests/userprog/sc-boundary-2.errors |tee tests/userprog/sc-boundary-2.output
+Copying tests/userprog/sc-boundary-2 to scratch partition...
+qemu-system-i386 -device isa-debug-exit -hda /tmp/BAhv5PDyA0.dsk -m 4 -net none -nographic -monitor null
+PiLo hda1
+Loading............
+Kernel command line: -q -f extract run sc-boundary-2
+Pintos booting with 3,968 kB RAM...
+367 pages available in kernel pool.
+367 pages available in user pool.
+Calibrating timer...  98,201,600 loops/s.
+hda: 5,040 sectors (2 MB), model "QM00001", serial "QEMU HARDDISK"
+hda1: 207 sectors (103 kB), Pintos OS kernel (20)
+hda2: 4,096 sectors (2 MB), Pintos file system (21)
+hda3: 111 sectors (55 kB), Pintos scratch (22)
+filesys: using hda2
+scratch: using hda3
+Formatting file system...done.
+Boot complete.
+Extracting ustar archive from scratch device into file system...
+Putting 'sc-boundary-2' into the file system...
+Erasing ustar archive...
+Executing 'sc-boundary-2':
+(sc-boundary-2) begin
+sc-boundary-2: exit(67)
+Execution of 'sc-boundary-2' complete.
+Timer: 107 ticks
+Thread: 50 idle ticks, 48 kernel ticks, 10 user ticks
+hda2 (filesys): 65 reads, 226 writes
+hda3 (scratch): 110 reads, 2 writes
+Console: 897 characters output
+Keyboard: 0 keys pressed
+Exception: 0 page faults
+Powering off...
+perl -I../.. ../../tests/userprog/sc-boundary-2.ck tests/userprog/sc-boundary-2 tests/userprog/sc-boundary-2.result
+pass tests/userprog/sc-boundary-2
+pintos -v -k -T 60 --qemu  --filesys-size=2 -p tests/userprog/sc-boundary-3 -a sc-boundary-3 -- -q  -f run sc-boundary-3 < /dev/null 2> tests/userprog/sc-boundary-3.errors |tee tests/userprog/sc-boundary-3.output
+Copying tests/userprog/sc-boundary-3 to scratch partition...
+qemu-system-i386 -device isa-debug-exit -hda /tmp/2KHlyWuNLG.dsk -m 4 -net none -nographic -monitor null
+PiLo hda1
+Loading............
+Kernel command line: -q -f extract run sc-boundary-3
+Pintos booting with 3,968 kB RAM...
+367 pages available in kernel pool.
+367 pages available in user pool.
+Calibrating timer...  118,988,800 loops/s.
+hda: 5,040 sectors (2 MB), model "QM00001", serial "QEMU HARDDISK"
+hda1: 207 sectors (103 kB), Pintos OS kernel (20)
+hda2: 4,096 sectors (2 MB), Pintos file system (21)
+hda3: 110 sectors (55 kB), Pintos scratch (22)
+filesys: using hda2
+scratch: using hda3
+Formatting file system...done.
+Boot complete.
+Extracting ustar archive from scratch device into file system...
+Putting 'sc-boundary-3' into the file system...
+Erasing ustar archive...
+Executing 'sc-boundary-3':
+(sc-boundary-3) begin
+sc-boundary-3: exit(-1)
+Execution of 'sc-boundary-3' complete.
+Timer: 111 ticks
+Thread: 41 idle ticks, 60 kernel ticks, 11 user ticks
+hda2 (filesys): 65 reads, 224 writes
+hda3 (scratch): 109 reads, 2 writes
+Console: 898 characters output
+Keyboard: 0 keys pressed
+Exception: 0 page faults
+Powering off...
+perl -I../.. ../../tests/userprog/sc-boundary-3.ck tests/userprog/sc-boundary-3 tests/userprog/sc-boundary-3.result
+pass tests/userprog/sc-boundary-3
+pintos -v -k -T 60 --qemu  --filesys-size=2 -p tests/userprog/halt -a halt -- -q  -f run halt < /dev/null 2> tests/userprog/halt.errors |tee tests/userprog/halt.output
+Copying tests/userprog/halt to scratch partition...
+qemu-system-i386 -device isa-debug-exit -hda /tmp/ZCcVh7BlMZ.dsk -m 4 -net none -nographic -monitor null
+PiLo hda1
+Loading............
+Kernel command line: -q -f extract run halt
+Pintos booting with 3,968 kB RAM...
+367 pages available in kernel pool.
+367 pages available in user pool.
+Calibrating timer...  118,784,000 loops/s.
+hda: 5,040 sectors (2 MB), model "QM00001", serial "QEMU HARDDISK"
+hda1: 207 sectors (103 kB), Pintos OS kernel (20)
+hda2: 4,096 sectors (2 MB), Pintos file system (21)
+hda3: 107 sectors (53 kB), Pintos scratch (22)
+filesys: using hda2
+scratch: using hda3
+Formatting file system...done.
+Boot complete.
+Extracting ustar archive from scratch device into file system...
+Putting 'halt' into the file system...
+Erasing ustar archive...
+Executing 'halt':
+(halt) begin
+Timer: 112 ticks
+Thread: 46 idle ticks, 57 kernel ticks, 10 user ticks
+hda2 (filesys): 64 reads, 218 writes
+hda3 (scratch): 106 reads, 2 writes
+Console: 799 characters output
+Keyboard: 0 keys pressed
+Exception: 0 page faults
+Powering off...
+perl -I../.. ../../tests/userprog/halt.ck tests/userprog/halt tests/userprog/halt.result
+pass tests/userprog/halt
+pintos -v -k -T 60 --qemu  --filesys-size=2 -p tests/userprog/exit -a exit -- -q  -f run exit < /dev/null 2> tests/userprog/exit.errors |tee tests/userprog/exit.output
+Copying tests/userprog/exit to scratch partition...
+qemu-system-i386 -device isa-debug-exit -hda /tmp/t0xi9tFTe8.dsk -m 4 -net none -nographic -monitor null
+PiLo hda1
+Loading............
+Kernel command line: -q -f extract run exit
+Pintos booting with 3,968 kB RAM...
+367 pages available in kernel pool.
+367 pages available in user pool.
+Calibrating timer...  118,374,400 loops/s.
+hda: 5,040 sectors (2 MB), model "QM00001", serial "QEMU HARDDISK"
+hda1: 207 sectors (103 kB), Pintos OS kernel (20)
+hda2: 4,096 sectors (2 MB), Pintos file system (21)
+hda3: 107 sectors (53 kB), Pintos scratch (22)
+filesys: using hda2
+scratch: using hda3
+Formatting file system...done.
+Boot complete.
+Extracting ustar archive from scratch device into file system...
+Putting 'exit' into the file system...
+Erasing ustar archive...
+Executing 'exit':
+(exit) begin
+exit: exit(57)
+Execution of 'exit' complete.
+Timer: 112 ticks
+Thread: 40 idle ticks, 62 kernel ticks, 11 user ticks
+hda2 (filesys): 64 reads, 218 writes
+hda3 (scratch): 106 reads, 2 writes
+Console: 844 characters output
+Keyboard: 0 keys pressed
+Exception: 0 page faults
+Powering off...
+perl -I../.. ../../tests/userprog/exit.ck tests/userprog/exit tests/userprog/exit.result
+pass tests/userprog/exit
+pintos -v -k -T 60 --qemu  --filesys-size=2 -p tests/userprog/create-normal -a create-normal -- -q  -f run create-normal < /dev/null 2> tests/userprog/create-normal.errors |tee tests/userprog/create-normal.output
+Copying tests/userprog/create-normal to scratch partition...
+qemu-system-i386 -device isa-debug-exit -hda /tmp/tMdw5jlN_S.dsk -m 4 -net none -nographic -monitor null
+PiLo hda1
+Loading............
+Kernel command line: -q -f extract run create-normal
+Pintos booting with 3,968 kB RAM...
+367 pages available in kernel pool.
+367 pages available in user pool.
+Calibrating timer...  127,795,200 loops/s.
+hda: 5,040 sectors (2 MB), model "QM00001", serial "QEMU HARDDISK"
+hda1: 207 sectors (103 kB), Pintos OS kernel (20)
+hda2: 4,096 sectors (2 MB), Pintos file system (21)
+hda3: 108 sectors (54 kB), Pintos scratch (22)
+filesys: using hda2
+scratch: using hda3
+Formatting file system...done.
+Boot complete.
+Extracting ustar archive from scratch device into file system...
+Putting 'create-normal' into the file system...
+Erasing ustar archive...
+Executing 'create-normal':
+(create-normal) begin
+(create-normal) create quux.dat
+(create-normal) end
+create-normal: exit(0)
+Execution of 'create-normal' complete.
+Timer: 121 ticks
+Thread: 37 idle ticks, 66 kernel ticks, 19 user ticks
+hda2 (filesys): 84 reads, 224 writes
+hda3 (scratch): 107 reads, 2 writes
+Console: 949 characters output
+Keyboard: 0 keys pressed
+Exception: 0 page faults
+Powering off...
+perl -I../.. ../../tests/userprog/create-normal.ck tests/userprog/create-normal tests/userprog/create-normal.result
+pass tests/userprog/create-normal
+pintos -v -k -T 60 --qemu  --filesys-size=2 -p tests/userprog/create-empty -a create-empty -- -q  -f run create-empty < /dev/null 2> tests/userprog/create-empty.errors |tee tests/userprog/create-empty.output
+Copying tests/userprog/create-empty to scratch partition...
+qemu-system-i386 -device isa-debug-exit -hda /tmp/hIxcaU3MJK.dsk -m 4 -net none -nographic -monitor null
+PiLo hda1
+Loading............
+Kernel command line: -q -f extract run create-empty
+Pintos booting with 3,968 kB RAM...
+367 pages available in kernel pool.
+367 pages available in user pool.
+Calibrating timer...  118,988,800 loops/s.
+hda: 5,040 sectors (2 MB), model "QM00001", serial "QEMU HARDDISK"
+hda1: 207 sectors (103 kB), Pintos OS kernel (20)
+hda2: 4,096 sectors (2 MB), Pintos file system (21)
+hda3: 107 sectors (53 kB), Pintos scratch (22)
+filesys: using hda2
+scratch: using hda3
+Formatting file system...done.
+Boot complete.
+Extracting ustar archive from scratch device into file system...
+Putting 'create-empty' into the file system...
+Erasing ustar archive...
+Executing 'create-empty':
+(create-empty) begin
+(create-empty) create(""): 0
+(create-empty) end
+create-empty: exit(0)
+Execution of 'create-empty' complete.
+Timer: 117 ticks
+Thread: 39 idle ticks, 62 kernel ticks, 17 user ticks
+hda2 (filesys): 65 reads, 222 writes
+hda3 (scratch): 106 reads, 2 writes
+Console: 939 characters output
+Keyboard: 0 keys pressed
+Exception: 0 page faults
+Powering off...
+perl -I../.. ../../tests/userprog/create-empty.ck tests/userprog/create-empty tests/userprog/create-empty.result
+pass tests/userprog/create-empty
+pintos -v -k -T 60 --qemu  --filesys-size=2 -p tests/userprog/create-null -a create-null -- -q  -f run create-null < /dev/null 2> tests/userprog/create-null.errors |tee tests/userprog/create-null.output
+Copying tests/userprog/create-null to scratch partition...
+qemu-system-i386 -device isa-debug-exit -hda /tmp/TLRdqPklK7.dsk -m 4 -net none -nographic -monitor null
+PiLo hda1
+Loading............
+Kernel command line: -q -f extract run create-null
+Pintos booting with 3,968 kB RAM...
+367 pages available in kernel pool.
+367 pages available in user pool.
+Calibrating timer...  107,929,600 loops/s.
+hda: 5,040 sectors (2 MB), model "QM00001", serial "QEMU HARDDISK"
+hda1: 207 sectors (103 kB), Pintos OS kernel (20)
+hda2: 4,096 sectors (2 MB), Pintos file system (21)
+hda3: 107 sectors (53 kB), Pintos scratch (22)
+filesys: using hda2
+scratch: using hda3
+Formatting file system...done.
+Boot complete.
+Extracting ustar archive from scratch device into file system...
+Putting 'create-null' into the file system...
+Erasing ustar archive...
+Executing 'create-null':
+(create-null) begin
+create-null: exit(-1)
+Execution of 'create-null' complete.
+Timer: 111 ticks
+Thread: 37 idle ticks, 64 kernel ticks, 11 user ticks
+hda2 (filesys): 64 reads, 218 writes
+hda3 (scratch): 106 reads, 2 writes
+Console: 886 characters output
+Keyboard: 0 keys pressed
+Exception: 0 page faults
+Powering off...
+perl -I../.. ../../tests/userprog/create-null.ck tests/userprog/create-null tests/userprog/create-null.result
+pass tests/userprog/create-null
+pintos -v -k -T 60 --qemu  --filesys-size=2 -p tests/userprog/create-bad-ptr -a create-bad-ptr -- -q  -f run create-bad-ptr < /dev/null 2> tests/userprog/create-bad-ptr.errors |tee tests/userprog/create-bad-ptr.output
+Copying tests/userprog/create-bad-ptr to scratch partition...
+qemu-system-i386 -device isa-debug-exit -hda /tmp/jrtu9BOx0w.dsk -m 4 -net none -nographic -monitor null
+PiLo hda1
+Loading............
+Kernel command line: -q -f extract run create-bad-ptr
+Pintos booting with 3,968 kB RAM...
+367 pages available in kernel pool.
+367 pages available in user pool.
+Calibrating timer...  115,507,200 loops/s.
+hda: 5,040 sectors (2 MB), model "QM00001", serial "QEMU HARDDISK"
+hda1: 207 sectors (103 kB), Pintos OS kernel (20)
+hda2: 4,096 sectors (2 MB), Pintos file system (21)
+hda3: 107 sectors (53 kB), Pintos scratch (22)
+filesys: using hda2
+scratch: using hda3
+Formatting file system...done.
+Boot complete.
+Extracting ustar archive from scratch device into file system...
+Putting 'create-bad-ptr' into the file system...
+Erasing ustar archive...
+Executing 'create-bad-ptr':
+(create-bad-ptr) begin
+create-bad-ptr: exit(-1)
+Execution of 'create-bad-ptr' complete.
+Timer: 113 ticks
+Thread: 42 idle ticks, 61 kernel ticks, 11 user ticks
+hda2 (filesys): 64 reads, 218 writes
+hda3 (scratch): 106 reads, 2 writes
+Console: 904 characters output
+Keyboard: 0 keys pressed
+Exception: 0 page faults
+Powering off...
+perl -I../.. ../../tests/userprog/create-bad-ptr.ck tests/userprog/create-bad-ptr tests/userprog/create-bad-ptr.result
+pass tests/userprog/create-bad-ptr
+pintos -v -k -T 60 --qemu  --filesys-size=2 -p tests/userprog/create-long -a create-long -- -q  -f run create-long < /dev/null 2> tests/userprog/create-long.errors |tee tests/userprog/create-long.output
+Copying tests/userprog/create-long to scratch partition...
+qemu-system-i386 -device isa-debug-exit -hda /tmp/9G95wFnpex.dsk -m 4 -net none -nographic -monitor null
+PiLo hda1
+Loading............
+Kernel command line: -q -f extract run create-long
+Pintos booting with 3,968 kB RAM...
+367 pages available in kernel pool.
+367 pages available in user pool.
+Calibrating timer...  118,169,600 loops/s.
+hda: 5,040 sectors (2 MB), model "QM00001", serial "QEMU HARDDISK"
+hda1: 207 sectors (103 kB), Pintos OS kernel (20)
+hda2: 4,096 sectors (2 MB), Pintos file system (21)
+hda3: 108 sectors (54 kB), Pintos scratch (22)
+filesys: using hda2
+scratch: using hda3
+Formatting file system...done.
+Boot complete.
+Extracting ustar archive from scratch device into file system...
+Putting 'create-long' into the file system...
+Erasing ustar archive...
+Executing 'create-long':
+(create-long) begin
+(create-long) create("x..."): 0
+(create-long) end
+create-long: exit(0)
+Execution of 'create-long' complete.
+Timer: 118 ticks
+Thread: 46 idle ticks, 59 kernel ticks, 14 user ticks
+hda2 (filesys): 66 reads, 224 writes
+hda3 (scratch): 107 reads, 2 writes
+Console: 935 characters output
+Keyboard: 0 keys pressed
+Exception: 0 page faults
+Powering off...
+perl -I../.. ../../tests/userprog/create-long.ck tests/userprog/create-long tests/userprog/create-long.result
+pass tests/userprog/create-long
+pintos -v -k -T 60 --qemu  --filesys-size=2 -p tests/userprog/create-exists -a create-exists -- -q  -f run create-exists < /dev/null 2> tests/userprog/create-exists.errors |tee tests/userprog/create-exists.output
+Copying tests/userprog/create-exists to scratch partition...
+qemu-system-i386 -device isa-debug-exit -hda /tmp/AZB9xV3Nt1.dsk -m 4 -net none -nographic -monitor null
+PiLo hda1
+Loading............
+Kernel command line: -q -f extract run create-exists
+Pintos booting with 3,968 kB RAM...
+367 pages available in kernel pool.
+367 pages available in user pool.
+Calibrating timer...  113,254,400 loops/s.
+hda: 5,040 sectors (2 MB), model "QM00001", serial "QEMU HARDDISK"
+hda1: 207 sectors (103 kB), Pintos OS kernel (20)
+hda2: 4,096 sectors (2 MB), Pintos file system (21)
+hda3: 109 sectors (54 kB), Pintos scratch (22)
+filesys: using hda2
+scratch: using hda3
+Formatting file system...done.
+Boot complete.
+Extracting ustar archive from scratch device into file system...
+Putting 'create-exists' into the file system...
+Erasing ustar archive...
+Executing 'create-exists':
+(create-exists) begin
+(create-exists) create quux.dat
+(create-exists) create warble.dat
+(create-exists) try to re-create quux.dat
+(create-exists) create baffle.dat
+(create-exists) try to re-create quux.dat
+(create-exists) end
+create-exists: exit(0)
+Execution of 'create-exists' complete.
+Timer: 130 ticks
+Thread: 46 idle ticks, 60 kernel ticks, 25 user ticks
+hda2 (filesys): 135 reads, 242 writes
+hda3 (scratch): 108 reads, 2 writes
+Console: 1102 characters output
+Keyboard: 0 keys pressed
+Exception: 0 page faults
+Powering off...
+perl -I../.. ../../tests/userprog/create-exists.ck tests/userprog/create-exists tests/userprog/create-exists.result
+pass tests/userprog/create-exists
+pintos -v -k -T 60 --qemu  --filesys-size=2 -p tests/userprog/create-bound -a create-bound -- -q  -f run create-bound < /dev/null 2> tests/userprog/create-bound.errors |tee tests/userprog/create-bound.output
+Copying tests/userprog/create-bound to scratch partition...
+qemu-system-i386 -device isa-debug-exit -hda /tmp/aHRtClrRoW.dsk -m 4 -net none -nographic -monitor null
+PiLo hda1
+Loading............
+Kernel command line: -q -f extract run create-bound
+Pintos booting with 3,968 kB RAM...
+367 pages available in kernel pool.
+367 pages available in user pool.
+Calibrating timer...  116,531,200 loops/s.
+hda: 5,040 sectors (2 MB), model "QM00001", serial "QEMU HARDDISK"
+hda1: 207 sectors (103 kB), Pintos OS kernel (20)
+hda2: 4,096 sectors (2 MB), Pintos file system (21)
+hda3: 110 sectors (55 kB), Pintos scratch (22)
+filesys: using hda2
+scratch: using hda3
+Formatting file system...done.
+Boot complete.
+Extracting ustar archive from scratch device into file system...
+Putting 'create-bound' into the file system...
+Erasing ustar archive...
+Executing 'create-bound':
+(create-bound) begin
+(create-bound) create("quux.dat"): 1
+(create-bound) end
+create-bound: exit(0)
+Execution of 'create-bound' complete.
+Timer: 120 ticks
+Thread: 40 idle ticks, 66 kernel ticks, 15 user ticks
+hda2 (filesys): 85 reads, 228 writes
+hda3 (scratch): 109 reads, 2 writes
+Console: 947 characters output
+Keyboard: 0 keys pressed
+Exception: 0 page faults
+Powering off...
+perl -I../.. ../../tests/userprog/create-bound.ck tests/userprog/create-bound tests/userprog/create-bound.result
+pass tests/userprog/create-bound
+pintos -v -k -T 60 --qemu  --filesys-size=2 -p tests/userprog/open-normal -a open-normal -p ../../tests/userprog/sample.txt -a sample.txt -- -q  -f run open-normal < /dev/null 2> tests/userprog/open-normal.errors |tee tests/userprog/open-normal.output
+Copying tests/userprog/open-normal to scratch partition...
+Copying ../../tests/userprog/sample.txt to scratch partition...
+qemu-system-i386 -device isa-debug-exit -hda /tmp/tvTWcfnFFR.dsk -m 4 -net none -nographic -monitor null
+PiLo hda1
+Loading............
+Kernel command line: -q -f extract run open-normal
+Pintos booting with 3,968 kB RAM...
+367 pages available in kernel pool.
+367 pages available in user pool.
+Calibrating timer...  112,640,000 loops/s.
+hda: 5,040 sectors (2 MB), model "QM00001", serial "QEMU HARDDISK"
+hda1: 207 sectors (103 kB), Pintos OS kernel (20)
+hda2: 4,096 sectors (2 MB), Pintos file system (21)
+hda3: 110 sectors (55 kB), Pintos scratch (22)
+filesys: using hda2
+scratch: using hda3
+Formatting file system...done.
+Boot complete.
+Extracting ustar archive from scratch device into file system...
+Putting 'open-normal' into the file system...
+Putting 'sample.txt' into the file system...
+Erasing ustar archive...
+Executing 'open-normal':
+(open-normal) begin
+(open-normal) end
+open-normal: exit(0)
+Execution of 'open-normal' complete.
+Timer: 118 ticks
+Thread: 44 idle ticks, 59 kernel ticks, 16 user ticks
+hda2 (filesys): 93 reads, 226 writes
+hda3 (scratch): 109 reads, 2 writes
+Console: 948 characters output
+Keyboard: 0 keys pressed
+Exception: 0 page faults
+Powering off...
+perl -I../.. ../../tests/userprog/open-normal.ck tests/userprog/open-normal tests/userprog/open-normal.result
+pass tests/userprog/open-normal
+pintos -v -k -T 60 --qemu  --filesys-size=2 -p tests/userprog/open-missing -a open-missing -- -q  -f run open-missing < /dev/null 2> tests/userprog/open-missing.errors |tee tests/userprog/open-missing.output
+Copying tests/userprog/open-missing to scratch partition...
+qemu-system-i386 -device isa-debug-exit -hda /tmp/XoLtzlRQje.dsk -m 4 -net none -nographic -monitor null
+PiLo hda1
+Loading............
+Kernel command line: -q -f extract run open-missing
+Pintos booting with 3,968 kB RAM...
+367 pages available in kernel pool.
+367 pages available in user pool.
+Calibrating timer...  119,808,000 loops/s.
+hda: 5,040 sectors (2 MB), model "QM00001", serial "QEMU HARDDISK"
+hda1: 207 sectors (103 kB), Pintos OS kernel (20)
+hda2: 4,096 sectors (2 MB), Pintos file system (21)
+hda3: 108 sectors (54 kB), Pintos scratch (22)
+filesys: using hda2
+scratch: using hda3
+Formatting file system...done.
+Boot complete.
+Extracting ustar archive from scratch device into file system...
+Putting 'open-missing' into the file system...
+Erasing ustar archive...
+Executing 'open-missing':
+(open-missing) begin
+(open-missing) end
+open-missing: exit(0)
+Execution of 'open-missing' complete.
+Timer: 116 ticks
+Thread: 38 idle ticks, 63 kernel ticks, 16 user ticks
+hda2 (filesys): 81 reads, 220 writes
+hda3 (scratch): 107 reads, 2 writes
+Console: 910 characters output
+Keyboard: 0 keys pressed
+Exception: 0 page faults
+Powering off...
+perl -I../.. ../../tests/userprog/open-missing.ck tests/userprog/open-missing tests/userprog/open-missing.result
+pass tests/userprog/open-missing
+pintos -v -k -T 60 --qemu  --filesys-size=2 -p tests/userprog/open-boundary -a open-boundary -p ../../tests/userprog/sample.txt -a sample.txt -- -q  -f run open-boundary < /dev/null 2> tests/userprog/open-boundary.errors |tee tests/userprog/open-boundary.output
+Copying tests/userprog/open-boundary to scratch partition...
+Copying ../../tests/userprog/sample.txt to scratch partition...
+qemu-system-i386 -device isa-debug-exit -hda /tmp/zahTMiEaIP.dsk -m 4 -net none -nographic -monitor null
+PiLo hda1
+Loading............
+Kernel command line: -q -f extract run open-boundary
+Pintos booting with 3,968 kB RAM...
+367 pages available in kernel pool.
+367 pages available in user pool.
+Calibrating timer...  126,156,800 loops/s.
+hda: 5,040 sectors (2 MB), model "QM00001", serial "QEMU HARDDISK"
+hda1: 207 sectors (103 kB), Pintos OS kernel (20)
+hda2: 4,096 sectors (2 MB), Pintos file system (21)
+hda3: 112 sectors (56 kB), Pintos scratch (22)
+filesys: using hda2
+scratch: using hda3
+Formatting file system...done.
+Boot complete.
+Extracting ustar archive from scratch device into file system...
+Putting 'open-boundary' into the file system...
+Putting 'sample.txt' into the file system...
+Erasing ustar archive...
+Executing 'open-boundary':
+(open-boundary) begin
+(open-boundary) open "sample.txt"
+(open-boundary) end
+open-boundary: exit(0)
+Execution of 'open-boundary' complete.
+Timer: 121 ticks
+Thread: 43 idle ticks, 64 kernel ticks, 16 user ticks
+hda2 (filesys): 94 reads, 230 writes
+hda3 (scratch): 111 reads, 2 writes
+Console: 996 characters output
+Keyboard: 0 keys pressed
+Exception: 0 page faults
+Powering off...
+perl -I../.. ../../tests/userprog/open-boundary.ck tests/userprog/open-boundary tests/userprog/open-boundary.result
+pass tests/userprog/open-boundary
+pintos -v -k -T 60 --qemu  --filesys-size=2 -p tests/userprog/open-empty -a open-empty -- -q  -f run open-empty < /dev/null 2> tests/userprog/open-empty.errors |tee tests/userprog/open-empty.output
+Copying tests/userprog/open-empty to scratch partition...
+qemu-system-i386 -device isa-debug-exit -hda /tmp/hJe4CqGN3x.dsk -m 4 -net none -nographic -monitor null
+PiLo hda1
+Loading............
+Kernel command line: -q -f extract run open-empty
+Pintos booting with 3,968 kB RAM...
+367 pages available in kernel pool.
+367 pages available in user pool.
+Calibrating timer...  116,531,200 loops/s.
+hda: 5,040 sectors (2 MB), model "QM00001", serial "QEMU HARDDISK"
+hda1: 207 sectors (103 kB), Pintos OS kernel (20)
+hda2: 4,096 sectors (2 MB), Pintos file system (21)
+hda3: 108 sectors (54 kB), Pintos scratch (22)
+filesys: using hda2
+scratch: using hda3
+Formatting file system...done.
+Boot complete.
+Extracting ustar archive from scratch device into file system...
+Putting 'open-empty' into the file system...
+Erasing ustar archive...
+Executing 'open-empty':
+(open-empty) begin
+(open-empty) end
+open-empty: exit(0)
+Execution of 'open-empty' complete.
+Timer: 117 ticks
+Thread: 46 idle ticks, 58 kernel ticks, 14 user ticks
+hda2 (filesys): 81 reads, 220 writes
+hda3 (scratch): 107 reads, 2 writes
+Console: 896 characters output
+Keyboard: 0 keys pressed
+Exception: 0 page faults
+Powering off...
+perl -I../.. ../../tests/userprog/open-empty.ck tests/userprog/open-empty tests/userprog/open-empty.result
+pass tests/userprog/open-empty
+pintos -v -k -T 60 --qemu  --filesys-size=2 -p tests/userprog/open-null -a open-null -- -q  -f run open-null < /dev/null 2> tests/userprog/open-null.errors |tee tests/userprog/open-null.output
+Copying tests/userprog/open-null to scratch partition...
+qemu-system-i386 -device isa-debug-exit -hda /tmp/2YNN_hTRg3.dsk -m 4 -net none -nographic -monitor null
+PiLo hda1
+Loading............
+Kernel command line: -q -f extract run open-null
+Pintos booting with 3,968 kB RAM...
+367 pages available in kernel pool.
+367 pages available in user pool.
+Calibrating timer...  113,459,200 loops/s.
+hda: 5,040 sectors (2 MB), model "QM00001", serial "QEMU HARDDISK"
+hda1: 207 sectors (103 kB), Pintos OS kernel (20)
+hda2: 4,096 sectors (2 MB), Pintos file system (21)
+hda3: 107 sectors (53 kB), Pintos scratch (22)
+filesys: using hda2
+scratch: using hda3
+Formatting file system...done.
+Boot complete.
+Extracting ustar archive from scratch device into file system...
+Putting 'open-null' into the file system...
+Erasing ustar archive...
+Executing 'open-null':
+(open-null) begin
+open-null: exit(-1)
+Execution of 'open-null' complete.
+Timer: 111 ticks
+Thread: 40 idle ticks, 63 kernel ticks, 9 user ticks
+hda2 (filesys): 64 reads, 218 writes
+hda3 (scratch): 106 reads, 2 writes
+Console: 873 characters output
+Keyboard: 0 keys pressed
+Exception: 0 page faults
+Powering off...
+perl -I../.. ../../tests/userprog/open-null.ck tests/userprog/open-null tests/userprog/open-null.result
+pass tests/userprog/open-null
+pintos -v -k -T 60 --qemu  --filesys-size=2 -p tests/userprog/open-bad-ptr -a open-bad-ptr -- -q  -f run open-bad-ptr < /dev/null 2> tests/userprog/open-bad-ptr.errors |tee tests/userprog/open-bad-ptr.output
+Copying tests/userprog/open-bad-ptr to scratch partition...
+qemu-system-i386 -device isa-debug-exit -hda /tmp/VzPtyWgrrR.dsk -m 4 -net none -nographic -monitor null
+PiLo hda1
+Loading............
+Kernel command line: -q -f extract run open-bad-ptr
+Pintos booting with 3,968 kB RAM...
+367 pages available in kernel pool.
+367 pages available in user pool.
+Calibrating timer...  113,254,400 loops/s.
+hda: 5,040 sectors (2 MB), model "QM00001", serial "QEMU HARDDISK"
+hda1: 207 sectors (103 kB), Pintos OS kernel (20)
+hda2: 4,096 sectors (2 MB), Pintos file system (21)
+hda3: 108 sectors (54 kB), Pintos scratch (22)
+filesys: using hda2
+scratch: using hda3
+Formatting file system...done.
+Boot complete.
+Extracting ustar archive from scratch device into file system...
+Putting 'open-bad-ptr' into the file system...
+Erasing ustar archive...
+Executing 'open-bad-ptr':
+(open-bad-ptr) begin
+open-bad-ptr: exit(-1)
+Execution of 'open-bad-ptr' complete.
+Timer: 109 ticks
+Thread: 39 idle ticks, 60 kernel ticks, 11 user ticks
+hda2 (filesys): 64 reads, 220 writes
+hda3 (scratch): 107 reads, 2 writes
+Console: 892 characters output
+Keyboard: 0 keys pressed
+Exception: 0 page faults
+Powering off...
+perl -I../.. ../../tests/userprog/open-bad-ptr.ck tests/userprog/open-bad-ptr tests/userprog/open-bad-ptr.result
+pass tests/userprog/open-bad-ptr
+pintos -v -k -T 60 --qemu  --filesys-size=2 -p tests/userprog/open-twice -a open-twice -p ../../tests/userprog/sample.txt -a sample.txt -- -q  -f run open-twice < /dev/null 2> tests/userprog/open-twice.errors |tee tests/userprog/open-twice.output
+Copying tests/userprog/open-twice to scratch partition...
+Copying ../../tests/userprog/sample.txt to scratch partition...
+qemu-system-i386 -device isa-debug-exit -hda /tmp/aVtdU90MpK.dsk -m 4 -net none -nographic -monitor null
+PiLo hda1
+Loading............
+Kernel command line: -q -f extract run open-twice
+Pintos booting with 3,968 kB RAM...
+367 pages available in kernel pool.
+367 pages available in user pool.
+Calibrating timer...  114,278,400 loops/s.
+hda: 5,040 sectors (2 MB), model "QM00001", serial "QEMU HARDDISK"
+hda1: 207 sectors (103 kB), Pintos OS kernel (20)
+hda2: 4,096 sectors (2 MB), Pintos file system (21)
+hda3: 110 sectors (55 kB), Pintos scratch (22)
+filesys: using hda2
+scratch: using hda3
+Formatting file system...done.
+Boot complete.
+Extracting ustar archive from scratch device into file system...
+Putting 'open-twice' into the file system...
+Putting 'sample.txt' into the file system...
+Erasing ustar archive...
+Executing 'open-twice':
+(open-twice) begin
+(open-twice) open "sample.txt" once
+(open-twice) open "sample.txt" again
+(open-twice) end
+open-twice: exit(0)
+Execution of 'open-twice' complete.
+Timer: 123 ticks
+Thread: 43 idle ticks, 63 kernel ticks, 19 user ticks
+hda2 (filesys): 103 reads, 226 writes
+hda3 (scratch): 109 reads, 2 writes
+Console: 1015 characters output
+Keyboard: 0 keys pressed
+Exception: 0 page faults
+Powering off...
+perl -I../.. ../../tests/userprog/open-twice.ck tests/userprog/open-twice tests/userprog/open-twice.result
+pass tests/userprog/open-twice
+pintos -v -k -T 60 --qemu  --filesys-size=2 -p tests/userprog/close-normal -a close-normal -p ../../tests/userprog/sample.txt -a sample.txt -- -q  -f run close-normal < /dev/null 2> tests/userprog/close-normal.errors |tee tests/userprog/close-normal.output
+Copying tests/userprog/close-normal to scratch partition...
+Copying ../../tests/userprog/sample.txt to scratch partition...
+qemu-system-i386 -device isa-debug-exit -hda /tmp/PC_V0I9vgo.dsk -m 4 -net none -nographic -monitor null
+PiLo hda1
+Loading............
+Kernel command line: -q -f extract run close-normal
+Pintos booting with 3,968 kB RAM...
+367 pages available in kernel pool.
+367 pages available in user pool.
+Calibrating timer...  109,158,400 loops/s.
+hda: 5,040 sectors (2 MB), model "QM00001", serial "QEMU HARDDISK"
+hda1: 207 sectors (103 kB), Pintos OS kernel (20)
+hda2: 4,096 sectors (2 MB), Pintos file system (21)
+hda3: 110 sectors (55 kB), Pintos scratch (22)
+filesys: using hda2
+scratch: using hda3
+Formatting file system...done.
+Boot complete.
+Extracting ustar archive from scratch device into file system...
+Putting 'close-normal' into the file system...
+Putting 'sample.txt' into the file system...
+Erasing ustar archive...
+Executing 'close-normal':
+(close-normal) begin
+(close-normal) open "sample.txt"
+(close-normal) close "sample.txt"
+(close-normal) end
+close-normal: exit(0)
+Execution of 'close-normal' complete.
+Timer: 122 ticks
+Thread: 41 idle ticks, 65 kernel ticks, 17 user ticks
+hda2 (filesys): 94 reads, 226 writes
+hda3 (scratch): 109 reads, 2 writes
+Console: 1022 characters output
+Keyboard: 0 keys pressed
+Exception: 0 page faults
+Powering off...
+perl -I../.. ../../tests/userprog/close-normal.ck tests/userprog/close-normal tests/userprog/close-normal.result
+pass tests/userprog/close-normal
+pintos -v -k -T 60 --qemu  --filesys-size=2 -p tests/userprog/close-twice -a close-twice -p ../../tests/userprog/sample.txt -a sample.txt -- -q  -f run close-twice < /dev/null 2> tests/userprog/close-twice.errors |tee tests/userprog/close-twice.output
+Copying tests/userprog/close-twice to scratch partition...
+Copying ../../tests/userprog/sample.txt to scratch partition...
+qemu-system-i386 -device isa-debug-exit -hda /tmp/HG2W9nQ_r2.dsk -m 4 -net none -nographic -monitor null
+PiLo hda1
+Loading............
+Kernel command line: -q -f extract run close-twice
+Pintos booting with 3,968 kB RAM...
+367 pages available in kernel pool.
+367 pages available in user pool.
+Calibrating timer...  104,755,200 loops/s.
+hda: 5,040 sectors (2 MB), model "QM00001", serial "QEMU HARDDISK"
+hda1: 207 sectors (103 kB), Pintos OS kernel (20)
+hda2: 4,096 sectors (2 MB), Pintos file system (21)
+hda3: 110 sectors (55 kB), Pintos scratch (22)
+filesys: using hda2
+scratch: using hda3
+Formatting file system...done.
+Boot complete.
+Extracting ustar archive from scratch device into file system...
+Putting 'close-twice' into the file system...
+Putting 'sample.txt' into the file system...
+Erasing ustar archive...
+Executing 'close-twice':
+(close-twice) begin
+(close-twice) open "sample.txt"
+(close-twice) close "sample.txt"
+(close-twice) close "sample.txt" again
+(close-twice) end
+close-twice: exit(0)
+Execution of 'close-twice' complete.
+Timer: 113 ticks
+Thread: 44 idle ticks, 52 kernel ticks, 18 user ticks
+hda2 (filesys): 94 reads, 226 writes
+hda3 (scratch): 109 reads, 2 writes
+Console: 1052 characters output
+Keyboard: 0 keys pressed
+Exception: 0 page faults
+Powering off...
+perl -I../.. ../../tests/userprog/close-twice.ck tests/userprog/close-twice tests/userprog/close-twice.result
+pass tests/userprog/close-twice
+pintos -v -k -T 60 --qemu  --filesys-size=2 -p tests/userprog/close-stdin -a close-stdin -- -q  -f run close-stdin < /dev/null 2> tests/userprog/close-stdin.errors |tee tests/userprog/close-stdin.output
+Copying tests/userprog/close-stdin to scratch partition...
+qemu-system-i386 -device isa-debug-exit -hda /tmp/iBnUHjXaDc.dsk -m 4 -net none -nographic -monitor null
+PiLo hda1
+Loading............
+Kernel command line: -q -f extract run close-stdin
+Pintos booting with 3,968 kB RAM...
+367 pages available in kernel pool.
+367 pages available in user pool.
+Calibrating timer...  122,265,600 loops/s.
+hda: 5,040 sectors (2 MB), model "QM00001", serial "QEMU HARDDISK"
+hda1: 207 sectors (103 kB), Pintos OS kernel (20)
+hda2: 4,096 sectors (2 MB), Pintos file system (21)
+hda3: 107 sectors (53 kB), Pintos scratch (22)
+filesys: using hda2
+scratch: using hda3
+Formatting file system...done.
+Boot complete.
+Extracting ustar archive from scratch device into file system...
+Putting 'close-stdin' into the file system...
+Erasing ustar archive...
+Executing 'close-stdin':
+(close-stdin) begin
+(close-stdin) end
+close-stdin: exit(0)
+Execution of 'close-stdin' complete.
+Timer: 114 ticks
+Thread: 42 idle ticks, 61 kernel ticks, 13 user ticks
+hda2 (filesys): 64 reads, 218 writes
+hda3 (scratch): 106 reads, 2 writes
+Console: 903 characters output
+Keyboard: 0 keys pressed
+Exception: 0 page faults
+Powering off...
+perl -I../.. ../../tests/userprog/close-stdin.ck tests/userprog/close-stdin tests/userprog/close-stdin.result
+pass tests/userprog/close-stdin
+pintos -v -k -T 60 --qemu  --filesys-size=2 -p tests/userprog/close-stdout -a close-stdout -- -q  -f run close-stdout < /dev/null 2> tests/userprog/close-stdout.errors |tee tests/userprog/close-stdout.output
+Copying tests/userprog/close-stdout to scratch partition...
+qemu-system-i386 -device isa-debug-exit -hda /tmp/Z0uuxzaHTx.dsk -m 4 -net none -nographic -monitor null
+PiLo hda1
+Loading............
+Kernel command line: -q -f extract run close-stdout
+Pintos booting with 3,968 kB RAM...
+367 pages available in kernel pool.
+367 pages available in user pool.
+Calibrating timer...  119,603,200 loops/s.
+hda: 5,040 sectors (2 MB), model "QM00001", serial "QEMU HARDDISK"
+hda1: 207 sectors (103 kB), Pintos OS kernel (20)
+hda2: 4,096 sectors (2 MB), Pintos file system (21)
+hda3: 107 sectors (53 kB), Pintos scratch (22)
+filesys: using hda2
+scratch: using hda3
+Formatting file system...done.
+Boot complete.
+Extracting ustar archive from scratch device into file system...
+Putting 'close-stdout' into the file system...
+Erasing ustar archive...
+Executing 'close-stdout':
+(close-stdout) begin
+(close-stdout) end
+close-stdout: exit(0)
+Execution of 'close-stdout' complete.
+Timer: 116 ticks
+Thread: 42 idle ticks, 62 kernel ticks, 13 user ticks
+hda2 (filesys): 64 reads, 218 writes
+hda3 (scratch): 106 reads, 2 writes
+Console: 910 characters output
+Keyboard: 0 keys pressed
+Exception: 0 page faults
+Powering off...
+perl -I../.. ../../tests/userprog/close-stdout.ck tests/userprog/close-stdout tests/userprog/close-stdout.result
+pass tests/userprog/close-stdout
+pintos -v -k -T 60 --qemu  --filesys-size=2 -p tests/userprog/close-bad-fd -a close-bad-fd -- -q  -f run close-bad-fd < /dev/null 2> tests/userprog/close-bad-fd.errors |tee tests/userprog/close-bad-fd.output
+Copying tests/userprog/close-bad-fd to scratch partition...
+qemu-system-i386 -device isa-debug-exit -hda /tmp/xdU9FBGB_H.dsk -m 4 -net none -nographic -monitor null
+PiLo hda1
+Loading............
+Kernel command line: -q -f extract run close-bad-fd
+Pintos booting with 3,968 kB RAM...
+367 pages available in kernel pool.
+367 pages available in user pool.
+Calibrating timer...  113,459,200 loops/s.
+hda: 5,040 sectors (2 MB), model "QM00001", serial "QEMU HARDDISK"
+hda1: 207 sectors (103 kB), Pintos OS kernel (20)
+hda2: 4,096 sectors (2 MB), Pintos file system (21)
+hda3: 107 sectors (53 kB), Pintos scratch (22)
+filesys: using hda2
+scratch: using hda3
+Formatting file system...done.
+Boot complete.
+Extracting ustar archive from scratch device into file system...
+Putting 'close-bad-fd' into the file system...
+Erasing ustar archive...
+Executing 'close-bad-fd':
+(close-bad-fd) begin
+(close-bad-fd) end
+close-bad-fd: exit(0)
+Execution of 'close-bad-fd' complete.
+Timer: 113 ticks
+Thread: 45 idle ticks, 59 kernel ticks, 10 user ticks
+hda2 (filesys): 64 reads, 218 writes
+hda3 (scratch): 106 reads, 2 writes
+Console: 910 characters output
+Keyboard: 0 keys pressed
+Exception: 0 page faults
+Powering off...
+perl -I../.. ../../tests/userprog/close-bad-fd.ck tests/userprog/close-bad-fd tests/userprog/close-bad-fd.result
+pass tests/userprog/close-bad-fd
+pintos -v -k -T 60 --qemu  --filesys-size=2 -p tests/userprog/read-normal -a read-normal -p ../../tests/userprog/sample.txt -a sample.txt -- -q  -f run read-normal < /dev/null 2> tests/userprog/read-normal.errors |tee tests/userprog/read-normal.output
+Copying tests/userprog/read-normal to scratch partition...
+Copying ../../tests/userprog/sample.txt to scratch partition...
+qemu-system-i386 -device isa-debug-exit -hda /tmp/7NEBo7aBGs.dsk -m 4 -net none -nographic -monitor null
+PiLo hda1
+Loading............
+Kernel command line: -q -f extract run read-normal
+Pintos booting with 3,968 kB RAM...
+367 pages available in kernel pool.
+367 pages available in user pool.
+Calibrating timer...  119,603,200 loops/s.
+hda: 5,040 sectors (2 MB), model "QM00001", serial "QEMU HARDDISK"
+hda1: 207 sectors (103 kB), Pintos OS kernel (20)
+hda2: 4,096 sectors (2 MB), Pintos file system (21)
+hda3: 110 sectors (55 kB), Pintos scratch (22)
+filesys: using hda2
+scratch: using hda3
+Formatting file system...done.
+Boot complete.
+Extracting ustar archive from scratch device into file system...
+Putting 'read-normal' into the file system...
+Putting 'sample.txt' into the file system...
+Erasing ustar archive...
+Executing 'read-normal':
+(read-normal) begin
+(read-normal) open "sample.txt" for verification
+(read-normal) verified contents of "sample.txt"
+(read-normal) close "sample.txt"
+(read-normal) end
+read-normal: exit(0)
+Execution of 'read-normal' complete.
+Timer: 129 ticks
+Thread: 46 idle ticks, 63 kernel ticks, 21 user ticks
+hda2 (filesys): 94 reads, 226 writes
+hda3 (scratch): 109 reads, 2 writes
+Console: 1078 characters output
+Keyboard: 0 keys pressed
+Exception: 0 page faults
+Powering off...
+perl -I../.. ../../tests/userprog/read-normal.ck tests/userprog/read-normal tests/userprog/read-normal.result
+pass tests/userprog/read-normal
+pintos -v -k -T 60 --qemu  --filesys-size=2 -p tests/userprog/read-bad-ptr -a read-bad-ptr -p ../../tests/userprog/sample.txt -a sample.txt -- -q  -f run read-bad-ptr < /dev/null 2> tests/userprog/read-bad-ptr.errors |tee tests/userprog/read-bad-ptr.output
+Copying tests/userprog/read-bad-ptr to scratch partition...
+Copying ../../tests/userprog/sample.txt to scratch partition...
+qemu-system-i386 -device isa-debug-exit -hda /tmp/PONqJ_dpUl.dsk -m 4 -net none -nographic -monitor null
+PiLo hda1
+Loading............
+Kernel command line: -q -f extract run read-bad-ptr
+Pintos booting with 3,968 kB RAM...
+367 pages available in kernel pool.
+367 pages available in user pool.
+Calibrating timer...  114,073,600 loops/s.
+hda: 5,040 sectors (2 MB), model "QM00001", serial "QEMU HARDDISK"
+hda1: 207 sectors (103 kB), Pintos OS kernel (20)
+hda2: 4,096 sectors (2 MB), Pintos file system (21)
+hda3: 110 sectors (55 kB), Pintos scratch (22)
+filesys: using hda2
+scratch: using hda3
+Formatting file system...done.
+Boot complete.
+Extracting ustar archive from scratch device into file system...
+Putting 'read-bad-ptr' into the file system...
+Putting 'sample.txt' into the file system...
+Erasing ustar archive...
+Executing 'read-bad-ptr':
+(read-bad-ptr) begin
+(read-bad-ptr) open "sample.txt"
+read-bad-ptr: exit(-1)
+Execution of 'read-bad-ptr' complete.
+Timer: 119 ticks
+Thread: 48 idle ticks, 55 kernel ticks, 17 user ticks
+hda2 (filesys): 94 reads, 226 writes
+hda3 (scratch): 109 reads, 2 writes
+Console: 970 characters output
+Keyboard: 0 keys pressed
+Exception: 0 page faults
+Powering off...
+perl -I../.. ../../tests/userprog/read-bad-ptr.ck tests/userprog/read-bad-ptr tests/userprog/read-bad-ptr.result
+pass tests/userprog/read-bad-ptr
+pintos -v -k -T 60 --qemu  --filesys-size=2 -p tests/userprog/read-boundary -a read-boundary -p ../../tests/userprog/sample.txt -a sample.txt -- -q  -f run read-boundary < /dev/null 2> tests/userprog/read-boundary.errors |tee tests/userprog/read-boundary.output
+Copying tests/userprog/read-boundary to scratch partition...
+Copying ../../tests/userprog/sample.txt to scratch partition...
+qemu-system-i386 -device isa-debug-exit -hda /tmp/ixCCQxTYq0.dsk -m 4 -net none -nographic -monitor null
+PiLo hda1
+Loading............
+Kernel command line: -q -f extract run read-boundary
+Pintos booting with 3,968 kB RAM...
+367 pages available in kernel pool.
+367 pages available in user pool.
+Calibrating timer...  118,784,000 loops/s.
+hda: 5,040 sectors (2 MB), model "QM00001", serial "QEMU HARDDISK"
+hda1: 207 sectors (103 kB), Pintos OS kernel (20)
+hda2: 4,096 sectors (2 MB), Pintos file system (21)
+hda3: 115 sectors (57 kB), Pintos scratch (22)
+filesys: using hda2
+scratch: using hda3
+Formatting file system...done.
+Boot complete.
+Extracting ustar archive from scratch device into file system...
+Putting 'read-boundary' into the file system...
+Putting 'sample.txt' into the file system...
+Erasing ustar archive...
+Executing 'read-boundary':
+(read-boundary) begin
+(read-boundary) open "sample.txt"
+(read-boundary) end
+read-boundary: exit(0)
+Execution of 'read-boundary' complete.
+Timer: 127 ticks
+Thread: 45 idle ticks, 68 kernel ticks, 15 user ticks
+hda2 (filesys): 96 reads, 236 writes
+hda3 (scratch): 114 reads, 2 writes
+Console: 996 characters output
+Keyboard: 0 keys pressed
+Exception: 0 page faults
+Powering off...
+perl -I../.. ../../tests/userprog/read-boundary.ck tests/userprog/read-boundary tests/userprog/read-boundary.result
+pass tests/userprog/read-boundary
+pintos -v -k -T 60 --qemu  --filesys-size=2 -p tests/userprog/read-zero -a read-zero -p ../../tests/userprog/sample.txt -a sample.txt -- -q  -f run read-zero < /dev/null 2> tests/userprog/read-zero.errors |tee tests/userprog/read-zero.output
+Copying tests/userprog/read-zero to scratch partition...
+Copying ../../tests/userprog/sample.txt to scratch partition...
+qemu-system-i386 -device isa-debug-exit -hda /tmp/zlGE0EnKSU.dsk -m 4 -net none -nographic -monitor null
+PiLo hda1
+Loading............
+Kernel command line: -q -f extract run read-zero
+Pintos booting with 3,968 kB RAM...
+367 pages available in kernel pool.
+367 pages available in user pool.
+Calibrating timer...  104,755,200 loops/s.
+hda: 5,040 sectors (2 MB), model "QM00001", serial "QEMU HARDDISK"
+hda1: 207 sectors (103 kB), Pintos OS kernel (20)
+hda2: 4,096 sectors (2 MB), Pintos file system (21)
+hda3: 110 sectors (55 kB), Pintos scratch (22)
+filesys: using hda2
+scratch: using hda3
+Formatting file system...done.
+Boot complete.
+Extracting ustar archive from scratch device into file system...
+Putting 'read-zero' into the file system...
+Putting 'sample.txt' into the file system...
+Erasing ustar archive...
+Executing 'read-zero':
+(read-zero) begin
+(read-zero) open "sample.txt"
+(read-zero) end
+read-zero: exit(0)
+Execution of 'read-zero' complete.
+Timer: 114 ticks
+Thread: 46 idle ticks, 51 kernel ticks, 18 user ticks
+hda2 (filesys): 94 reads, 226 writes
+hda3 (scratch): 109 reads, 2 writes
+Console: 964 characters output
+Keyboard: 0 keys pressed
+Exception: 0 page faults
+Powering off...
+perl -I../.. ../../tests/userprog/read-zero.ck tests/userprog/read-zero tests/userprog/read-zero.result
+pass tests/userprog/read-zero
+pintos -v -k -T 60 --qemu  --filesys-size=2 -p tests/userprog/read-stdout -a read-stdout -- -q  -f run read-stdout < /dev/null 2> tests/userprog/read-stdout.errors |tee tests/userprog/read-stdout.output
+Copying tests/userprog/read-stdout to scratch partition...
+qemu-system-i386 -device isa-debug-exit -hda /tmp/gxjPuKEcoj.dsk -m 4 -net none -nographic -monitor null
+PiLo hda1
+Loading............
+Kernel command line: -q -f extract run read-stdout
+Pintos booting with 3,968 kB RAM...
+367 pages available in kernel pool.
+367 pages available in user pool.
+Calibrating timer...  109,977,600 loops/s.
+hda: 5,040 sectors (2 MB), model "QM00001", serial "QEMU HARDDISK"
+hda1: 207 sectors (103 kB), Pintos OS kernel (20)
+hda2: 4,096 sectors (2 MB), Pintos file system (21)
+hda3: 107 sectors (53 kB), Pintos scratch (22)
+filesys: using hda2
+scratch: using hda3
+Formatting file system...done.
+Boot complete.
+Extracting ustar archive from scratch device into file system...
+Putting 'read-stdout' into the file system...
+Erasing ustar archive...
+Executing 'read-stdout':
+(read-stdout) begin
+(read-stdout) end
+read-stdout: exit(0)
+Execution of 'read-stdout' complete.
+Timer: 114 ticks
+Thread: 43 idle ticks, 61 kernel ticks, 11 user ticks
+hda2 (filesys): 64 reads, 218 writes
+hda3 (scratch): 106 reads, 2 writes
+Console: 903 characters output
+Keyboard: 0 keys pressed
+Exception: 0 page faults
+Powering off...
+perl -I../.. ../../tests/userprog/read-stdout.ck tests/userprog/read-stdout tests/userprog/read-stdout.result
+pass tests/userprog/read-stdout
+pintos -v -k -T 60 --qemu  --filesys-size=2 -p tests/userprog/read-bad-fd -a read-bad-fd -- -q  -f run read-bad-fd < /dev/null 2> tests/userprog/read-bad-fd.errors |tee tests/userprog/read-bad-fd.output
+Copying tests/userprog/read-bad-fd to scratch partition...
+qemu-system-i386 -device isa-debug-exit -hda /tmp/QaM9gQOgSE.dsk -m 4 -net none -nographic -monitor null
+PiLo hda1
+Loading............
+Kernel command line: -q -f extract run read-bad-fd
+Pintos booting with 3,968 kB RAM...
+367 pages available in kernel pool.
+367 pages available in user pool.
+Calibrating timer...  122,265,600 loops/s.
+hda: 5,040 sectors (2 MB), model "QM00001", serial "QEMU HARDDISK"
+hda1: 207 sectors (103 kB), Pintos OS kernel (20)
+hda2: 4,096 sectors (2 MB), Pintos file system (21)
+hda3: 108 sectors (54 kB), Pintos scratch (22)
+filesys: using hda2
+scratch: using hda3
+Formatting file system...done.
+Boot complete.
+Extracting ustar archive from scratch device into file system...
+Putting 'read-bad-fd' into the file system...
+Erasing ustar archive...
+Executing 'read-bad-fd':
+(read-bad-fd) begin
+(read-bad-fd) end
+read-bad-fd: exit(0)
+Execution of 'read-bad-fd' complete.
+Timer: 117 ticks
+Thread: 44 idle ticks, 63 kernel ticks, 11 user ticks
+hda2 (filesys): 65 reads, 220 writes
+hda3 (scratch): 107 reads, 2 writes
+Console: 903 characters output
+Keyboard: 0 keys pressed
+Exception: 0 page faults
+Powering off...
+perl -I../.. ../../tests/userprog/read-bad-fd.ck tests/userprog/read-bad-fd tests/userprog/read-bad-fd.result
+pass tests/userprog/read-bad-fd
+pintos -v -k -T 60 --qemu  --filesys-size=2 -p tests/userprog/write-normal -a write-normal -p ../../tests/userprog/sample.txt -a sample.txt -- -q  -f run write-normal < /dev/null 2> tests/userprog/write-normal.errors |tee tests/userprog/write-normal.output
+Copying tests/userprog/write-normal to scratch partition...
+Copying ../../tests/userprog/sample.txt to scratch partition...
+qemu-system-i386 -device isa-debug-exit -hda /tmp/0K8JVIpMXw.dsk -m 4 -net none -nographic -monitor null
+PiLo hda1
+Loading............
+Kernel command line: -q -f extract run write-normal
+Pintos booting with 3,968 kB RAM...
+367 pages available in kernel pool.
+367 pages available in user pool.
+Calibrating timer...  104,755,200 loops/s.
+hda: 5,040 sectors (2 MB), model "QM00001", serial "QEMU HARDDISK"
+hda1: 207 sectors (103 kB), Pintos OS kernel (20)
+hda2: 4,096 sectors (2 MB), Pintos file system (21)
+hda3: 111 sectors (55 kB), Pintos scratch (22)
+filesys: using hda2
+scratch: using hda3
+Formatting file system...done.
+Boot complete.
+Extracting ustar archive from scratch device into file system...
+Putting 'write-normal' into the file system...
+Putting 'sample.txt' into the file system...
+Erasing ustar archive...
+Executing 'write-normal':
+(write-normal) begin
+(write-normal) create "test.txt"
+(write-normal) open "test.txt"
+(write-normal) end
+write-normal: exit(0)
+Execution of 'write-normal' complete.
+Timer: 122 ticks
+Thread: 49 idle ticks, 53 kernel ticks, 21 user ticks
+hda2 (filesys): 117 reads, 234 writes
+hda3 (scratch): 110 reads, 2 writes
+Console: 1020 characters output
+Keyboard: 0 keys pressed
+Exception: 0 page faults
+Powering off...
+perl -I../.. ../../tests/userprog/write-normal.ck tests/userprog/write-normal tests/userprog/write-normal.result
+pass tests/userprog/write-normal
+pintos -v -k -T 60 --qemu  --filesys-size=2 -p tests/userprog/write-bad-ptr -a write-bad-ptr -p ../../tests/userprog/sample.txt -a sample.txt -- -q  -f run write-bad-ptr < /dev/null 2> tests/userprog/write-bad-ptr.errors |tee tests/userprog/write-bad-ptr.output
+Copying tests/userprog/write-bad-ptr to scratch partition...
+Copying ../../tests/userprog/sample.txt to scratch partition...
+qemu-system-i386 -device isa-debug-exit -hda /tmp/SqOxOeC5Fx.dsk -m 4 -net none -nographic -monitor null
+PiLo hda1
+Loading............
+Kernel command line: -q -f extract run write-bad-ptr
+Pintos booting with 3,968 kB RAM...
+367 pages available in kernel pool.
+367 pages available in user pool.
+Calibrating timer...  115,097,600 loops/s.
+hda: 5,040 sectors (2 MB), model "QM00001", serial "QEMU HARDDISK"
+hda1: 207 sectors (103 kB), Pintos OS kernel (20)
+hda2: 4,096 sectors (2 MB), Pintos file system (21)
+hda3: 110 sectors (55 kB), Pintos scratch (22)
+filesys: using hda2
+scratch: using hda3
+Formatting file system...done.
+Boot complete.
+Extracting ustar archive from scratch device into file system...
+Putting 'write-bad-ptr' into the file system...
+Putting 'sample.txt' into the file system...
+Erasing ustar archive...
+Executing 'write-bad-ptr':
+(write-bad-ptr) begin
+(write-bad-ptr) open "sample.txt"
+write-bad-ptr: exit(-1)
+Execution of 'write-bad-ptr' complete.
+Timer: 123 ticks
+Thread: 42 idle ticks, 65 kernel ticks, 17 user ticks
+hda2 (filesys): 94 reads, 226 writes
+hda3 (scratch): 109 reads, 2 writes
+Console: 977 characters output
+Keyboard: 0 keys pressed
+Exception: 0 page faults
+Powering off...
+perl -I../.. ../../tests/userprog/write-bad-ptr.ck tests/userprog/write-bad-ptr tests/userprog/write-bad-ptr.result
+pass tests/userprog/write-bad-ptr
+pintos -v -k -T 60 --qemu  --filesys-size=2 -p tests/userprog/write-boundary -a write-boundary -p ../../tests/userprog/sample.txt -a sample.txt -- -q  -f run write-boundary < /dev/null 2> tests/userprog/write-boundary.errors |tee tests/userprog/write-boundary.output
+Copying tests/userprog/write-boundary to scratch partition...
+Copying ../../tests/userprog/sample.txt to scratch partition...
+qemu-system-i386 -device isa-debug-exit -hda /tmp/teCUC9FaWA.dsk -m 4 -net none -nographic -monitor null
+PiLo hda1
+Loading............
+Kernel command line: -q -f extract run write-boundary
+Pintos booting with 3,968 kB RAM...
+367 pages available in kernel pool.
+367 pages available in user pool.
+Calibrating timer...  109,977,600 loops/s.
+hda: 5,040 sectors (2 MB), model "QM00001", serial "QEMU HARDDISK"
+hda1: 207 sectors (103 kB), Pintos OS kernel (20)
+hda2: 4,096 sectors (2 MB), Pintos file system (21)
+hda3: 114 sectors (57 kB), Pintos scratch (22)
+filesys: using hda2
+scratch: using hda3
+Formatting file system...done.
+Boot complete.
+Extracting ustar archive from scratch device into file system...
+Putting 'write-boundary' into the file system...
+Putting 'sample.txt' into the file system...
+Erasing ustar archive...
+Executing 'write-boundary':
+(write-boundary) begin
+(write-boundary) open "sample.txt"
+(write-boundary) end
+write-boundary: exit(0)
+Execution of 'write-boundary' complete.
+Timer: 132 ticks
+Thread: 48 idle ticks, 63 kernel ticks, 23 user ticks
+hda2 (filesys): 96 reads, 235 writes
+hda3 (scratch): 113 reads, 2 writes
+Console: 1004 characters output
+Keyboard: 0 keys pressed
+Exception: 0 page faults
+Powering off...
+perl -I../.. ../../tests/userprog/write-boundary.ck tests/userprog/write-boundary tests/userprog/write-boundary.result
+pass tests/userprog/write-boundary
+pintos -v -k -T 60 --qemu  --filesys-size=2 -p tests/userprog/write-zero -a write-zero -p ../../tests/userprog/sample.txt -a sample.txt -- -q  -f run write-zero < /dev/null 2> tests/userprog/write-zero.errors |tee tests/userprog/write-zero.output
+Copying tests/userprog/write-zero to scratch partition...
+Copying ../../tests/userprog/sample.txt to scratch partition...
+qemu-system-i386 -device isa-debug-exit -hda /tmp/7mxToh4KMy.dsk -m 4 -net none -nographic -monitor null
+PiLo hda1
+Loading............
+Kernel command line: -q -f extract run write-zero
+Pintos booting with 3,968 kB RAM...
+367 pages available in kernel pool.
+367 pages available in user pool.
+Calibrating timer...  104,550,400 loops/s.
+hda: 5,040 sectors (2 MB), model "QM00001", serial "QEMU HARDDISK"
+hda1: 207 sectors (103 kB), Pintos OS kernel (20)
+hda2: 4,096 sectors (2 MB), Pintos file system (21)
+hda3: 110 sectors (55 kB), Pintos scratch (22)
+filesys: using hda2
+scratch: using hda3
+Formatting file system...done.
+Boot complete.
+Extracting ustar archive from scratch device into file system...
+Putting 'write-zero' into the file system...
+Putting 'sample.txt' into the file system...
+Erasing ustar archive...
+Executing 'write-zero':
+(write-zero) begin
+(write-zero) open "sample.txt"
+(write-zero) end
+write-zero: exit(0)
+Execution of 'write-zero' complete.
+Timer: 116 ticks
+Thread: 49 idle ticks, 52 kernel ticks, 16 user ticks
+hda2 (filesys): 94 reads, 226 writes
+hda3 (scratch): 109 reads, 2 writes
+Console: 972 characters output
+Keyboard: 0 keys pressed
+Exception: 0 page faults
+Powering off...
+perl -I../.. ../../tests/userprog/write-zero.ck tests/userprog/write-zero tests/userprog/write-zero.result
+pass tests/userprog/write-zero
+pintos -v -k -T 60 --qemu  --filesys-size=2 -p tests/userprog/write-stdin -a write-stdin -- -q  -f run write-stdin < /dev/null 2> tests/userprog/write-stdin.errors |tee tests/userprog/write-stdin.output
+Copying tests/userprog/write-stdin to scratch partition...
+qemu-system-i386 -device isa-debug-exit -hda /tmp/ZRxDnJz4yc.dsk -m 4 -net none -nographic -monitor null
+PiLo hda1
+Loading............
+Kernel command line: -q -f extract run write-stdin
+Pintos booting with 3,968 kB RAM...
+367 pages available in kernel pool.
+367 pages available in user pool.
+Calibrating timer...  111,206,400 loops/s.
+hda: 5,040 sectors (2 MB), model "QM00001", serial "QEMU HARDDISK"
+hda1: 207 sectors (103 kB), Pintos OS kernel (20)
+hda2: 4,096 sectors (2 MB), Pintos file system (21)
+hda3: 107 sectors (53 kB), Pintos scratch (22)
+filesys: using hda2
+scratch: using hda3
+Formatting file system...done.
+Boot complete.
+Extracting ustar archive from scratch device into file system...
+Putting 'write-stdin' into the file system...
+Erasing ustar archive...
+Executing 'write-stdin':
+(write-stdin) begin
+(write-stdin) end
+write-stdin: exit(0)
+Execution of 'write-stdin' complete.
+Timer: 111 ticks
+Thread: 45 idle ticks, 58 kernel ticks, 10 user ticks
+hda2 (filesys): 64 reads, 218 writes
+hda3 (scratch): 106 reads, 2 writes
+Console: 903 characters output
+Keyboard: 0 keys pressed
+Exception: 0 page faults
+Powering off...
+perl -I../.. ../../tests/userprog/write-stdin.ck tests/userprog/write-stdin tests/userprog/write-stdin.result
+pass tests/userprog/write-stdin
+pintos -v -k -T 60 --qemu  --filesys-size=2 -p tests/userprog/write-bad-fd -a write-bad-fd -- -q  -f run write-bad-fd < /dev/null 2> tests/userprog/write-bad-fd.errors |tee tests/userprog/write-bad-fd.output
+Copying tests/userprog/write-bad-fd to scratch partition...
+qemu-system-i386 -device isa-debug-exit -hda /tmp/UkiHeCdMM0.dsk -m 4 -net none -nographic -monitor null
+PiLo hda1
+Loading............
+Kernel command line: -q -f extract run write-bad-fd
+Pintos booting with 3,968 kB RAM...
+367 pages available in kernel pool.
+367 pages available in user pool.
+Calibrating timer...  119,603,200 loops/s.
+hda: 5,040 sectors (2 MB), model "QM00001", serial "QEMU HARDDISK"
+hda1: 207 sectors (103 kB), Pintos OS kernel (20)
+hda2: 4,096 sectors (2 MB), Pintos file system (21)
+hda3: 108 sectors (54 kB), Pintos scratch (22)
+filesys: using hda2
+scratch: using hda3
+Formatting file system...done.
+Boot complete.
+Extracting ustar archive from scratch device into file system...
+Putting 'write-bad-fd' into the file system...
+Erasing ustar archive...
+Executing 'write-bad-fd':
+(write-bad-fd) begin
+(write-bad-fd) end
+write-bad-fd: exit(0)
+Execution of 'write-bad-fd' complete.
+Timer: 110 ticks
+Thread: 41 idle ticks, 58 kernel ticks, 12 user ticks
+hda2 (filesys): 65 reads, 220 writes
+hda3 (scratch): 107 reads, 2 writes
+Console: 910 characters output
+Keyboard: 0 keys pressed
+Exception: 0 page faults
+Powering off...
+perl -I../.. ../../tests/userprog/write-bad-fd.ck tests/userprog/write-bad-fd tests/userprog/write-bad-fd.result
+pass tests/userprog/write-bad-fd
+pintos -v -k -T 60 --qemu  --filesys-size=2 -p tests/userprog/exec-once -a exec-once -p tests/userprog/child-simple -a child-simple -- -q  -f run exec-once < /dev/null 2> tests/userprog/exec-once.errors |tee tests/userprog/exec-once.output
+Copying tests/userprog/exec-once to scratch partition...
+Copying tests/userprog/child-simple to scratch partition...
+qemu-system-i386 -device isa-debug-exit -hda /tmp/WsXCpwSAfU.dsk -m 4 -net none -nographic -monitor null
+PiLo hda1
+Loading............
+Kernel command line: -q -f extract run exec-once
+Pintos booting with 3,968 kB RAM...
+367 pages available in kernel pool.
+367 pages available in user pool.
+Calibrating timer...  104,652,800 loops/s.
+hda: 5,040 sectors (2 MB), model "QM00001", serial "QEMU HARDDISK"
+hda1: 207 sectors (103 kB), Pintos OS kernel (20)
+hda2: 4,096 sectors (2 MB), Pintos file system (21)
+hda3: 211 sectors (105 kB), Pintos scratch (22)
+filesys: using hda2
+scratch: using hda3
+Formatting file system...done.
+Boot complete.
+Extracting ustar archive from scratch device into file system...
+Putting 'exec-once' into the file system...
+Putting 'child-simple' into the file system...
+Erasing ustar archive...
+Executing 'exec-once':
+(exec-once) begin
+(child-simple) run
+child-simple: exit(81)
+(exec-once) end
+exec-once: exit(0)
+Execution of 'exec-once' complete.
+Timer: 143 ticks
+Thread: 51 idle ticks, 71 kernel ticks, 23 user ticks
+hda2 (filesys): 127 reads, 428 writes
+hda3 (scratch): 210 reads, 2 writes
+Console: 980 characters output
+Keyboard: 0 keys pressed
+Exception: 0 page faults
+Powering off...
+perl -I../.. ../../tests/userprog/exec-once.ck tests/userprog/exec-once tests/userprog/exec-once.result
+pass tests/userprog/exec-once
+pintos -v -k -T 60 --qemu  --filesys-size=2 -p tests/userprog/exec-arg -a exec-arg -p tests/userprog/child-args -a child-args -- -q  -f run exec-arg < /dev/null 2> tests/userprog/exec-arg.errors |tee tests/userprog/exec-arg.output
+Copying tests/userprog/exec-arg to scratch partition...
+Copying tests/userprog/child-args to scratch partition...
+qemu-system-i386 -device isa-debug-exit -hda /tmp/bVY4sua4K4.dsk -m 4 -net none -nographic -monitor null
+PiLo hda1
+Loading............
+Kernel command line: -q -f extract run exec-arg
+Pintos booting with 3,968 kB RAM...
+367 pages available in kernel pool.
+367 pages available in user pool.
+Calibrating timer...  98,201,600 loops/s.
+hda: 5,040 sectors (2 MB), model "QM00001", serial "QEMU HARDDISK"
+hda1: 207 sectors (103 kB), Pintos OS kernel (20)
+hda2: 4,096 sectors (2 MB), Pintos file system (21)
+hda3: 212 sectors (106 kB), Pintos scratch (22)
+filesys: using hda2
+scratch: using hda3
+Formatting file system...done.
+Boot complete.
+Extracting ustar archive from scratch device into file system...
+Putting 'exec-arg' into the file system...
+Putting 'child-args' into the file system...
+Erasing ustar archive...
+Executing 'exec-arg':
+(exec-arg) begin
+(args) begin
+(args) argc = 2
+(args) argv[0] = 'child-args'
+(args) argv[1] = 'childarg'
+(args) argv[2] = null
+(args) end
+child-args: exit(0)
+(exec-arg) end
+exec-arg: exit(0)
+Execution of 'exec-arg' complete.
+Timer: 148 ticks
+Thread: 55 idle ticks, 65 kernel ticks, 29 user ticks
+hda2 (filesys): 129 reads, 430 writes
+hda3 (scratch): 211 reads, 2 writes
+Console: 1068 characters output
+Keyboard: 0 keys pressed
+Exception: 0 page faults
+Powering off...
+perl -I../.. ../../tests/userprog/exec-arg.ck tests/userprog/exec-arg tests/userprog/exec-arg.result
+pass tests/userprog/exec-arg
+pintos -v -k -T 60 --qemu  --filesys-size=2 -p tests/userprog/exec-bound -a exec-bound -p tests/userprog/child-args -a child-args -- -q  -f run exec-bound < /dev/null 2> tests/userprog/exec-bound.errors |tee tests/userprog/exec-bound.output
+Copying tests/userprog/exec-bound to scratch partition...
+Copying tests/userprog/child-args to scratch partition...
+qemu-system-i386 -device isa-debug-exit -hda /tmp/Oau15Z2tYm.dsk -m 4 -net none -nographic -monitor null
+PiLo hda1
+Loading............
+Kernel command line: -q -f extract run exec-bound
+Pintos booting with 3,968 kB RAM...
+367 pages available in kernel pool.
+367 pages available in user pool.
+Calibrating timer...  157,286,400 loops/s.
+hda: 5,040 sectors (2 MB), model "QM00001", serial "QEMU HARDDISK"
+hda1: 207 sectors (103 kB), Pintos OS kernel (20)
+hda2: 4,096 sectors (2 MB), Pintos file system (21)
+hda3: 215 sectors (107 kB), Pintos scratch (22)
+filesys: using hda2
+scratch: using hda3
+Formatting file system...done.
+Boot complete.
+Extracting ustar archive from scratch device into file system...
+Putting 'exec-bound' into the file system...
+Putting 'child-args' into the file system...
+Erasing ustar archive...
+Executing 'exec-bound':
+(exec-bound) begin
+(args) begin
+(args) argc = 3
+(args) argv[0] = 'child-args'
+(args) argv[1] = 'arg1'
+(args) argv[2] = 'arg2'
+(args) argv[3] = null
+(args) end
+child-args: exit(0)
+(exec-bound) end
+exec-bound: exit(0)
+Execution of 'exec-bound' complete.
+Timer: 156 ticks
+Thread: 52 idle ticks, 76 kernel ticks, 29 user ticks
+hda2 (filesys): 130 reads, 436 writes
+hda3 (scratch): 214 reads, 2 writes
+Console: 1103 characters output
+Keyboard: 0 keys pressed
+Exception: 0 page faults
+Powering off...
+perl -I../.. ../../tests/userprog/exec-bound.ck tests/userprog/exec-bound tests/userprog/exec-bound.result
+pass tests/userprog/exec-bound
+pintos -v -k -T 60 --qemu  --filesys-size=2 -p tests/userprog/exec-bound-2 -a exec-bound-2 -- -q  -f run exec-bound-2 < /dev/null 2> tests/userprog/exec-bound-2.errors |tee tests/userprog/exec-bound-2.output
+Copying tests/userprog/exec-bound-2 to scratch partition...
+qemu-system-i386 -device isa-debug-exit -hda /tmp/OJsoa1HxsI.dsk -m 4 -net none -nographic -monitor null
+PiLo hda1
+Loading............
+Kernel command line: -q -f extract run exec-bound-2
+Pintos booting with 3,968 kB RAM...
+367 pages available in kernel pool.
+367 pages available in user pool.
+Calibrating timer...  124,518,400 loops/s.
+hda: 5,040 sectors (2 MB), model "QM00001", serial "QEMU HARDDISK"
+hda1: 207 sectors (103 kB), Pintos OS kernel (20)
+hda2: 4,096 sectors (2 MB), Pintos file system (21)
+hda3: 111 sectors (55 kB), Pintos scratch (22)
+filesys: using hda2
+scratch: using hda3
+Formatting file system...done.
+Boot complete.
+Extracting ustar archive from scratch device into file system...
+Putting 'exec-bound-2' into the file system...
+Erasing ustar archive...
+Executing 'exec-bound-2':
+(exec-bound-2) begin
+exec-bound-2: exit(-1)
+Execution of 'exec-bound-2' complete.
+Timer: 116 ticks
+Thread: 43 idle ticks, 62 kernel ticks, 12 user ticks
+hda2 (filesys): 65 reads, 226 writes
+hda3 (scratch): 110 reads, 2 writes
+Console: 892 characters output
+Keyboard: 0 keys pressed
+Exception: 0 page faults
+Powering off...
+perl -I../.. ../../tests/userprog/exec-bound-2.ck tests/userprog/exec-bound-2 tests/userprog/exec-bound-2.result
+pass tests/userprog/exec-bound-2
+pintos -v -k -T 60 --qemu  --filesys-size=2 -p tests/userprog/exec-bound-3 -a exec-bound-3 -- -q  -f run exec-bound-3 < /dev/null 2> tests/userprog/exec-bound-3.errors |tee tests/userprog/exec-bound-3.output
+Copying tests/userprog/exec-bound-3 to scratch partition...
+qemu-system-i386 -device isa-debug-exit -hda /tmp/zAs2wlTlOS.dsk -m 4 -net none -nographic -monitor null
+PiLo hda1
+Loading............
+Kernel command line: -q -f extract run exec-bound-3
+Pintos booting with 3,968 kB RAM...
+367 pages available in kernel pool.
+367 pages available in user pool.
+Calibrating timer...  111,411,200 loops/s.
+hda: 5,040 sectors (2 MB), model "QM00001", serial "QEMU HARDDISK"
+hda1: 207 sectors (103 kB), Pintos OS kernel (20)
+hda2: 4,096 sectors (2 MB), Pintos file system (21)
+hda3: 111 sectors (55 kB), Pintos scratch (22)
+filesys: using hda2
+scratch: using hda3
+Formatting file system...done.
+Boot complete.
+Extracting ustar archive from scratch device into file system...
+Putting 'exec-bound-3' into the file system...
+Erasing ustar archive...
+Executing 'exec-bound-3':
+(exec-bound-3) begin
+exec-bound-3: exit(-1)
+Execution of 'exec-bound-3' complete.
+Timer: 124 ticks
+Thread: 46 idle ticks, 67 kernel ticks, 12 user ticks
+hda2 (filesys): 65 reads, 226 writes
+hda3 (scratch): 110 reads, 2 writes
+Console: 892 characters output
+Keyboard: 0 keys pressed
+Exception: 0 page faults
+Powering off...
+perl -I../.. ../../tests/userprog/exec-bound-3.ck tests/userprog/exec-bound-3 tests/userprog/exec-bound-3.result
+pass tests/userprog/exec-bound-3
+pintos -v -k -T 60 --qemu  --filesys-size=2 -p tests/userprog/exec-multiple -a exec-multiple -p tests/userprog/child-simple -a child-simple -- -q  -f run exec-multiple < /dev/null 2> tests/userprog/exec-multiple.errors |tee tests/userprog/exec-multiple.output
+Copying tests/userprog/exec-multiple to scratch partition...
+Copying tests/userprog/child-simple to scratch partition...
+qemu-system-i386 -device isa-debug-exit -hda /tmp/kivsoJ2ekB.dsk -m 4 -net none -nographic -monitor null
+PiLo hda1
+Loading............
+Kernel command line: -q -f extract run exec-multiple
+Pintos booting with 3,968 kB RAM...
+367 pages available in kernel pool.
+367 pages available in user pool.
+Calibrating timer...  111,411,200 loops/s.
+hda: 5,040 sectors (2 MB), model "QM00001", serial "QEMU HARDDISK"
+hda1: 207 sectors (103 kB), Pintos OS kernel (20)
+hda2: 4,096 sectors (2 MB), Pintos file system (21)
+hda3: 212 sectors (106 kB), Pintos scratch (22)
+filesys: using hda2
+scratch: using hda3
+Formatting file system...done.
+Boot complete.
+Extracting ustar archive from scratch device into file system...
+Putting 'exec-multiple' into the file system...
+Putting 'child-simple' into the file system...
+Erasing ustar archive...
+Executing 'exec-multiple':
+(exec-multiple) begin
+(child-simple) run
+child-simple: exit(81)
+(child-simple) run
+child-simple: exit(81)
+(child-simple) run
+child-simple: exit(81)
+(child-simple) run
+child-simple: exit(81)
+(exec-multiple) end
+exec-multiple: exit(0)
+Execution of 'exec-multiple' complete.
+Timer: 169 ticks
+Thread: 60 idle ticks, 77 kernel ticks, 33 user ticks
+hda2 (filesys): 241 reads, 430 writes
+hda3 (scratch): 211 reads, 2 writes
+Console: 1134 characters output
+Keyboard: 0 keys pressed
+Exception: 0 page faults
+Powering off...
+perl -I../.. ../../tests/userprog/exec-multiple.ck tests/userprog/exec-multiple tests/userprog/exec-multiple.result
+pass tests/userprog/exec-multiple
+pintos -v -k -T 60 --qemu  --filesys-size=2 -p tests/userprog/exec-missing -a exec-missing -- -q  -f run exec-missing < /dev/null 2> tests/userprog/exec-missing.errors |tee tests/userprog/exec-missing.output
+Copying tests/userprog/exec-missing to scratch partition...
+qemu-system-i386 -device isa-debug-exit -hda /tmp/JPfOPxLern.dsk -m 4 -net none -nographic -monitor null
+PiLo hda1
+Loading............
+Kernel command line: -q -f extract run exec-missing
+Pintos booting with 3,968 kB RAM...
+367 pages available in kernel pool.
+367 pages available in user pool.
+Calibrating timer...  118,784,000 loops/s.
+hda: 5,040 sectors (2 MB), model "QM00001", serial "QEMU HARDDISK"
+hda1: 207 sectors (103 kB), Pintos OS kernel (20)
+hda2: 4,096 sectors (2 MB), Pintos file system (21)
+hda3: 107 sectors (53 kB), Pintos scratch (22)
+filesys: using hda2
+scratch: using hda3
+Formatting file system...done.
+Boot complete.
+Extracting ustar archive from scratch device into file system...
+Putting 'exec-missing' into the file system...
+Erasing ustar archive...
+Executing 'exec-missing':
+(exec-missing) begin
+load: no-such-file: open failed
+(exec-missing) exec("no-such-file"): -1
+(exec-missing) end
+exec-missing: exit(0)
+Execution of 'exec-missing' complete.
+Timer: 124 ticks
+Thread: 45 idle ticks, 64 kernel ticks, 16 user ticks
+hda2 (filesys): 81 reads, 218 writes
+hda3 (scratch): 106 reads, 2 writes
+Console: 982 characters output
+Keyboard: 0 keys pressed
+Exception: 0 page faults
+Powering off...
+perl -I../.. ../../tests/userprog/exec-missing.ck tests/userprog/exec-missing tests/userprog/exec-missing.result
+pass tests/userprog/exec-missing
+pintos -v -k -T 60 --qemu  --filesys-size=2 -p tests/userprog/exec-bad-ptr -a exec-bad-ptr -- -q  -f run exec-bad-ptr < /dev/null 2> tests/userprog/exec-bad-ptr.errors |tee tests/userprog/exec-bad-ptr.output
+Copying tests/userprog/exec-bad-ptr to scratch partition...
+qemu-system-i386 -device isa-debug-exit -hda /tmp/0MJSVWrnRK.dsk -m 4 -net none -nographic -monitor null
+PiLo hda1
+Loading............
+Kernel command line: -q -f extract run exec-bad-ptr
+Pintos booting with 3,968 kB RAM...
+367 pages available in kernel pool.
+367 pages available in user pool.
+Calibrating timer...  109,977,600 loops/s.
+hda: 5,040 sectors (2 MB), model "QM00001", serial "QEMU HARDDISK"
+hda1: 207 sectors (103 kB), Pintos OS kernel (20)
+hda2: 4,096 sectors (2 MB), Pintos file system (21)
+hda3: 107 sectors (53 kB), Pintos scratch (22)
+filesys: using hda2
+scratch: using hda3
+Formatting file system...done.
+Boot complete.
+Extracting ustar archive from scratch device into file system...
+Putting 'exec-bad-ptr' into the file system...
+Erasing ustar archive...
+Executing 'exec-bad-ptr':
+(exec-bad-ptr) begin
+exec-bad-ptr: exit(-1)
+Execution of 'exec-bad-ptr' complete.
+Timer: 118 ticks
+Thread: 43 idle ticks, 64 kernel ticks, 12 user ticks
+hda2 (filesys): 64 reads, 218 writes
+hda3 (scratch): 106 reads, 2 writes
+Console: 892 characters output
+Keyboard: 0 keys pressed
+Exception: 0 page faults
+Powering off...
+perl -I../.. ../../tests/userprog/exec-bad-ptr.ck tests/userprog/exec-bad-ptr tests/userprog/exec-bad-ptr.result
+pass tests/userprog/exec-bad-ptr
+pintos -v -k -T 60 --qemu  --filesys-size=2 -p tests/userprog/wait-simple -a wait-simple -p tests/userprog/child-simple -a child-simple -- -q  -f run wait-simple < /dev/null 2> tests/userprog/wait-simple.errors |tee tests/userprog/wait-simple.output
+Copying tests/userprog/wait-simple to scratch partition...
+Copying tests/userprog/child-simple to scratch partition...
+qemu-system-i386 -device isa-debug-exit -hda /tmp/jzmaEEUaVO.dsk -m 4 -net none -nographic -monitor null
+PiLo hda1
+Loading............
+Kernel command line: -q -f extract run wait-simple
+Pintos booting with 3,968 kB RAM...
+367 pages available in kernel pool.
+367 pages available in user pool.
+Calibrating timer...  111,206,400 loops/s.
+hda: 5,040 sectors (2 MB), model "QM00001", serial "QEMU HARDDISK"
+hda1: 207 sectors (103 kB), Pintos OS kernel (20)
+hda2: 4,096 sectors (2 MB), Pintos file system (21)
+hda3: 212 sectors (106 kB), Pintos scratch (22)
+filesys: using hda2
+scratch: using hda3
+Formatting file system...done.
+Boot complete.
+Extracting ustar archive from scratch device into file system...
+Putting 'wait-simple' into the file system...
+Putting 'child-simple' into the file system...
+Erasing ustar archive...
+Executing 'wait-simple':
+(wait-simple) begin
+(child-simple) run
+child-simple: exit(81)
+(wait-simple) wait(exec()) = 81
+(wait-simple) end
+wait-simple: exit(0)
+Execution of 'wait-simple' complete.
+Timer: 153 ticks
+Thread: 56 idle ticks, 75 kernel ticks, 23 user ticks
+hda2 (filesys): 127 reads, 430 writes
+hda3 (scratch): 211 reads, 2 writes
+Console: 1026 characters output
+Keyboard: 0 keys pressed
+Exception: 0 page faults
+Powering off...
+perl -I../.. ../../tests/userprog/wait-simple.ck tests/userprog/wait-simple tests/userprog/wait-simple.result
+pass tests/userprog/wait-simple
+pintos -v -k -T 60 --qemu  --filesys-size=2 -p tests/userprog/wait-twice -a wait-twice -p tests/userprog/child-simple -a child-simple -- -q  -f run wait-twice < /dev/null 2> tests/userprog/wait-twice.errors |tee tests/userprog/wait-twice.output
+Copying tests/userprog/wait-twice to scratch partition...
+Copying tests/userprog/child-simple to scratch partition...
+qemu-system-i386 -device isa-debug-exit -hda /tmp/6dlyHIC9et.dsk -m 4 -net none -nographic -monitor null
+PiLo hda1
+Loading............
+Kernel command line: -q -f extract run wait-twice
+Pintos booting with 3,968 kB RAM...
+367 pages available in kernel pool.
+367 pages available in user pool.
+Calibrating timer...  114,892,800 loops/s.
+hda: 5,040 sectors (2 MB), model "QM00001", serial "QEMU HARDDISK"
+hda1: 207 sectors (103 kB), Pintos OS kernel (20)
+hda2: 4,096 sectors (2 MB), Pintos file system (21)
+hda3: 212 sectors (106 kB), Pintos scratch (22)
+filesys: using hda2
+scratch: using hda3
+Formatting file system...done.
+Boot complete.
+Extracting ustar archive from scratch device into file system...
+Putting 'wait-twice' into the file system...
+Putting 'child-simple' into the file system...
+Erasing ustar archive...
+Executing 'wait-twice':
+(wait-twice) begin
+(child-simple) run
+child-simple: exit(81)
+(wait-twice) wait(exec()) = 81
+(wait-twice) wait(exec()) = -1
+(wait-twice) end
+wait-twice: exit(0)
+Execution of 'wait-twice' complete.
+Timer: 160 ticks
+Thread: 60 idle ticks, 74 kernel ticks, 27 user ticks
+hda2 (filesys): 128 reads, 430 writes
+hda3 (scratch): 211 reads, 2 writes
+Console: 1049 characters output
+Keyboard: 0 keys pressed
+Exception: 0 page faults
+Powering off...
+perl -I../.. ../../tests/userprog/wait-twice.ck tests/userprog/wait-twice tests/userprog/wait-twice.result
+pass tests/userprog/wait-twice
+pintos -v -k -T 60 --qemu  --filesys-size=2 -p tests/userprog/wait-killed -a wait-killed -p tests/userprog/child-bad -a child-bad -- -q  -f run wait-killed < /dev/null 2> tests/userprog/wait-killed.errors |tee tests/userprog/wait-killed.output
+Copying tests/userprog/wait-killed to scratch partition...
+Copying tests/userprog/child-bad to scratch partition...
+qemu-system-i386 -device isa-debug-exit -hda /tmp/iK9Z54rblQ.dsk -m 4 -net none -nographic -monitor null
+PiLo hda1
+Loading............
+Kernel command line: -q -f extract run wait-killed
+Pintos booting with 3,968 kB RAM...
+367 pages available in kernel pool.
+367 pages available in user pool.
+Calibrating timer...  119,808,000 loops/s.
+hda: 5,040 sectors (2 MB), model "QM00001", serial "QEMU HARDDISK"
+hda1: 207 sectors (103 kB), Pintos OS kernel (20)
+hda2: 4,096 sectors (2 MB), Pintos file system (21)
+hda3: 213 sectors (106 kB), Pintos scratch (22)
+filesys: using hda2
+scratch: using hda3
+Formatting file system...done.
+Boot complete.
+Extracting ustar archive from scratch device into file system...
+Putting 'wait-killed' into the file system...
+Putting 'child-bad' into the file system...
+Erasing ustar archive...
+Executing 'wait-killed':
+(wait-killed) begin
+(child-bad) begin
+child-bad: exit(-1)
+(wait-killed) wait(exec()) = -1
+(wait-killed) end
+wait-killed: exit(0)
+Execution of 'wait-killed' complete.
+Timer: 149 ticks
+Thread: 55 idle ticks, 71 kernel ticks, 24 user ticks
+hda2 (filesys): 128 reads, 432 writes
+hda3 (scratch): 212 reads, 2 writes
+Console: 1019 characters output
+Keyboard: 0 keys pressed
+Exception: 0 page faults
+Powering off...
+perl -I../.. ../../tests/userprog/wait-killed.ck tests/userprog/wait-killed tests/userprog/wait-killed.result
+pass tests/userprog/wait-killed
+pintos -v -k -T 60 --qemu  --filesys-size=2 -p tests/userprog/wait-bad-pid -a wait-bad-pid -- -q  -f run wait-bad-pid < /dev/null 2> tests/userprog/wait-bad-pid.errors |tee tests/userprog/wait-bad-pid.output
+Copying tests/userprog/wait-bad-pid to scratch partition...
+qemu-system-i386 -device isa-debug-exit -hda /tmp/zpnmcHPv0g.dsk -m 4 -net none -nographic -monitor null
+PiLo hda1
+Loading............
+Kernel command line: -q -f extract run wait-bad-pid
+Pintos booting with 3,968 kB RAM...
+367 pages available in kernel pool.
+367 pages available in user pool.
+Calibrating timer...  111,206,400 loops/s.
+hda: 5,040 sectors (2 MB), model "QM00001", serial "QEMU HARDDISK"
+hda1: 207 sectors (103 kB), Pintos OS kernel (20)
+hda2: 4,096 sectors (2 MB), Pintos file system (21)
+hda3: 107 sectors (53 kB), Pintos scratch (22)
+filesys: using hda2
+scratch: using hda3
+Formatting file system...done.
+Boot complete.
+Extracting ustar archive from scratch device into file system...
+Putting 'wait-bad-pid' into the file system...
+Erasing ustar archive...
+Executing 'wait-bad-pid':
+(wait-bad-pid) begin
+(wait-bad-pid) end
+wait-bad-pid: exit(0)
+Execution of 'wait-bad-pid' complete.
+Timer: 111 ticks
+Thread: 38 idle ticks, 61 kernel ticks, 13 user ticks
+hda2 (filesys): 64 reads, 218 writes
+hda3 (scratch): 106 reads, 2 writes
+Console: 910 characters output
+Keyboard: 0 keys pressed
+Exception: 0 page faults
+Powering off...
+perl -I../.. ../../tests/userprog/wait-bad-pid.ck tests/userprog/wait-bad-pid tests/userprog/wait-bad-pid.result
+pass tests/userprog/wait-bad-pid
+pintos -v -k -T 60 --qemu  --filesys-size=2 -p tests/userprog/multi-recurse -a multi-recurse -- -q  -f run 'multi-recurse 15' < /dev/null 2> tests/userprog/multi-recurse.errors |tee tests/userprog/multi-recurse.output
+Copying tests/userprog/multi-recurse to scratch partition...
+qemu-system-i386 -device isa-debug-exit -hda /tmp/E0bwlZjtPT.dsk -m 4 -net none -nographic -monitor null
+PiLo hda1
+Loading............
+Kernel command line: -q -f extract run 'multi-recurse 15'
+Pintos booting with 3,968 kB RAM...
+367 pages available in kernel pool.
+367 pages available in user pool.
+Calibrating timer...  114,073,600 loops/s.
+hda: 5,040 sectors (2 MB), model "QM00001", serial "QEMU HARDDISK"
+hda1: 207 sectors (103 kB), Pintos OS kernel (20)
+hda2: 4,096 sectors (2 MB), Pintos file system (21)
+hda3: 121 sectors (60 kB), Pintos scratch (22)
+filesys: using hda2
+scratch: using hda3
+Formatting file system...done.
+Boot complete.
+Extracting ustar archive from scratch device into file system...
+Putting 'multi-recurse' into the file system...
+Erasing ustar archive...
+Executing 'multi-recurse 15':
+(multi-recurse) begin 15
+(multi-recurse) exec("multi-recurse 14")
+(multi-recurse) begin 14
+(multi-recurse) exec("multi-recurse 13")
+(multi-recurse) begin 13
+(multi-recurse) exec("multi-recurse 12")
+(multi-recurse) begin 12
+(multi-recurse) exec("multi-recurse 11")
+(multi-recurse) begin 11
+(multi-recurse) exec("multi-recurse 10")
+(multi-recurse) begin 10
+(multi-recurse) exec("multi-recurse 9")
+(multi-recurse) begin 9
+(multi-recurse) exec("multi-recurse 8")
+(multi-recurse) begin 8
+(multi-recurse) exec("multi-recurse 7")
+(multi-recurse) begin 7
+(multi-recurse) exec("multi-recurse 6")
+(multi-recurse) begin 6
+(multi-recurse) exec("multi-recurse 5")
+(multi-recurse) begin 5
+(multi-recurse) exec("multi-recurse 4")
+(multi-recurse) begin 4
+(multi-recurse) exec("multi-recurse 3")
+(multi-recurse) begin 3
+(multi-recurse) exec("multi-recurse 2")
+(multi-recurse) begin 2
+(multi-recurse) exec("multi-recurse 1")
+(multi-recurse) begin 1
+(multi-recurse) exec("multi-recurse 0")
+(multi-recurse) begin 0
+(multi-recurse) end 0
+multi-recurse: exit(0)
+(multi-recurse) end 1
+multi-recurse: exit(1)
+(multi-recurse) end 2
+multi-recurse: exit(2)
+(multi-recurse) end 3
+multi-recurse: exit(3)
+(multi-recurse) end 4
+multi-recurse: exit(4)
+(multi-recurse) end 5
+multi-recurse: exit(5)
+(multi-recurse) end 6
+multi-recurse: exit(6)
+(multi-recurse) end 7
+multi-recurse: exit(7)
+(multi-recurse) end 8
+multi-recurse: exit(8)
+(multi-recurse) end 9
+multi-recurse: exit(9)
+(multi-recurse) end 10
+multi-recurse: exit(10)
+(multi-recurse) end 11
+multi-recurse: exit(11)
+(multi-recurse) end 12
+multi-recurse: exit(12)
+(multi-recurse) end 13
+multi-recurse: exit(13)
+(multi-recurse) end 14
+multi-recurse: exit(14)
+(multi-recurse) end 15
+multi-recurse: exit(15)
+Execution of 'multi-recurse 15' complete.
+Timer: 291 ticks
+Thread: 70 idle ticks, 68 kernel ticks, 154 user ticks
+hda2 (filesys): 699 reads, 246 writes
+hda3 (scratch): 120 reads, 2 writes
+Console: 2592 characters output
+Keyboard: 0 keys pressed
+Exception: 0 page faults
+Powering off...
+perl -I../.. ../../tests/userprog/multi-recurse.ck tests/userprog/multi-recurse tests/userprog/multi-recurse.result
+pass tests/userprog/multi-recurse
+pintos -v -k -T 60 --qemu  --filesys-size=2 -p tests/userprog/multi-child-fd -a multi-child-fd -p ../../tests/userprog/sample.txt -a sample.txt -p tests/userprog/child-close -a child-close -- -q  -f run multi-child-fd < /dev/null 2> tests/userprog/multi-child-fd.errors |tee tests/userprog/multi-child-fd.output
+Copying tests/userprog/multi-child-fd to scratch partition...
+Copying ../../tests/userprog/sample.txt to scratch partition...
+Copying tests/userprog/child-close to scratch partition...
+qemu-system-i386 -device isa-debug-exit -hda /tmp/fpxTYCrjs5.dsk -m 4 -net none -nographic -monitor null
+PiLo hda1
+Loading............
+Kernel command line: -q -f extract run multi-child-fd
+Pintos booting with 3,968 kB RAM...
+367 pages available in kernel pool.
+367 pages available in user pool.
+Calibrating timer...  119,603,200 loops/s.
+hda: 5,040 sectors (2 MB), model "QM00001", serial "QEMU HARDDISK"
+hda1: 207 sectors (103 kB), Pintos OS kernel (20)
+hda2: 4,096 sectors (2 MB), Pintos file system (21)
+hda3: 228 sectors (114 kB), Pintos scratch (22)
+filesys: using hda2
+scratch: using hda3
+Formatting file system...done.
+Boot complete.
+Extracting ustar archive from scratch device into file system...
+Putting 'multi-child-fd' into the file system...
+Putting 'sample.txt' into the file system...
+Putting 'child-close' into the file system...
+Erasing ustar archive...
+Executing 'multi-child-fd':
+(multi-child-fd) begin
+(multi-child-fd) open "sample.txt"
+(child-close) begin
+(child-close) end
+child-close: exit(0)
+(multi-child-fd) wait(exec()) = 0
+(multi-child-fd) verified contents of "sample.txt"
+(multi-child-fd) end
+multi-child-fd: exit(0)
+Execution of 'multi-child-fd' complete.
+Timer: 162 ticks
+Thread: 65 idle ticks, 69 kernel ticks, 28 user ticks
+hda2 (filesys): 166 reads, 464 writes
+hda3 (scratch): 227 reads, 2 writes
+Console: 1196 characters output
+Keyboard: 0 keys pressed
+Exception: 0 page faults
+Powering off...
+perl -I../.. ../../tests/userprog/multi-child-fd.ck tests/userprog/multi-child-fd tests/userprog/multi-child-fd.result
+pass tests/userprog/multi-child-fd
+pintos -v -k -T 60 --qemu  --filesys-size=2 -p tests/userprog/rox-simple -a rox-simple -- -q  -f run rox-simple < /dev/null 2> tests/userprog/rox-simple.errors |tee tests/userprog/rox-simple.output
+Copying tests/userprog/rox-simple to scratch partition...
+qemu-system-i386 -device isa-debug-exit -hda /tmp/s3CoTLass5.dsk -m 4 -net none -nographic -monitor null
+PiLo hda1
+Loading............
+Kernel command line: -q -f extract run rox-simple
+Pintos booting with 3,968 kB RAM...
+367 pages available in kernel pool.
+367 pages available in user pool.
+Calibrating timer...  118,169,600 loops/s.
+hda: 5,040 sectors (2 MB), model "QM00001", serial "QEMU HARDDISK"
+hda1: 207 sectors (103 kB), Pintos OS kernel (20)
+hda2: 4,096 sectors (2 MB), Pintos file system (21)
+hda3: 109 sectors (54 kB), Pintos scratch (22)
+filesys: using hda2
+scratch: using hda3
+Formatting file system...done.
+Boot complete.
+Extracting ustar archive from scratch device into file system...
+Putting 'rox-simple' into the file system...
+Erasing ustar archive...
+Executing 'rox-simple':
+(rox-simple) begin
+(rox-simple) open "rox-simple"
+(rox-simple) read "rox-simple"
+(rox-simple) try to write "rox-simple"
+(rox-simple) end
+rox-simple: exit(0)
+Execution of 'rox-simple' complete.
+Timer: 124 ticks
+Thread: 44 idle ticks, 65 kernel ticks, 16 user ticks
+hda2 (filesys): 68 reads, 222 writes
+hda3 (scratch): 108 reads, 2 writes
+Console: 997 characters output
+Keyboard: 0 keys pressed
+Exception: 0 page faults
+Powering off...
+perl -I../.. ../../tests/userprog/rox-simple.ck tests/userprog/rox-simple tests/userprog/rox-simple.result
+pass tests/userprog/rox-simple
+pintos -v -k -T 60 --qemu  --filesys-size=2 -p tests/userprog/rox-child -a rox-child -p tests/userprog/child-rox -a child-rox -- -q  -f run rox-child < /dev/null 2> tests/userprog/rox-child.errors |tee tests/userprog/rox-child.output
+Copying tests/userprog/rox-child to scratch partition...
+Copying tests/userprog/child-rox to scratch partition...
+qemu-system-i386 -device isa-debug-exit -hda /tmp/EU6CzC7oHf.dsk -m 4 -net none -nographic -monitor null
+PiLo hda1
+Loading............
+Kernel command line: -q -f extract run rox-child
+Pintos booting with 3,968 kB RAM...
+367 pages available in kernel pool.
+367 pages available in user pool.
+Calibrating timer...  107,929,600 loops/s.
+hda: 5,040 sectors (2 MB), model "QM00001", serial "QEMU HARDDISK"
+hda1: 207 sectors (103 kB), Pintos OS kernel (20)
+hda2: 4,096 sectors (2 MB), Pintos file system (21)
+hda3: 230 sectors (115 kB), Pintos scratch (22)
+filesys: using hda2
+scratch: using hda3
+Formatting file system...done.
+Boot complete.
+Extracting ustar archive from scratch device into file system...
+Putting 'rox-child' into the file system...
+Putting 'child-rox' into the file system...
+Erasing ustar archive...
+Executing 'rox-child':
+(rox-child) begin
+(rox-child) open "child-rox"
+(rox-child) read "child-rox"
+(rox-child) write "child-rox"
+(rox-child) exec "child-rox 1"
+(child-rox) begin
+(child-rox) try to write "child-rox"
+(child-rox) try to write "child-rox"
+(child-rox) end
+child-rox: exit(12)
+(rox-child) write "child-rox"
+(rox-child) end
+rox-child: exit(0)
+Execution of 'rox-child' complete.
+Timer: 158 ticks
+Thread: 55 idle ticks, 71 kernel ticks, 32 user ticks
+hda2 (filesys): 147 reads, 468 writes
+hda3 (scratch): 229 reads, 2 writes
+Console: 1212 characters output
+Keyboard: 0 keys pressed
+Exception: 0 page faults
+Powering off...
+perl -I../.. ../../tests/userprog/rox-child.ck tests/userprog/rox-child tests/userprog/rox-child.result
+pass tests/userprog/rox-child
+pintos -v -k -T 60 --qemu  --filesys-size=2 -p tests/userprog/rox-multichild -a rox-multichild -p tests/userprog/child-rox -a child-rox -- -q  -f run rox-multichild < /dev/null 2> tests/userprog/rox-multichild.errors |tee tests/userprog/rox-multichild.output
+Copying tests/userprog/rox-multichild to scratch partition...
+Copying tests/userprog/child-rox to scratch partition...
+qemu-system-i386 -device isa-debug-exit -hda /tmp/AspKriBe37.dsk -m 4 -net none -nographic -monitor null
+PiLo hda1
+Loading............
+Kernel command line: -q -f extract run rox-multichild
+Pintos booting with 3,968 kB RAM...
+367 pages available in kernel pool.
+367 pages available in user pool.
+Calibrating timer...  111,206,400 loops/s.
+hda: 5,040 sectors (2 MB), model "QM00001", serial "QEMU HARDDISK"
+hda1: 207 sectors (103 kB), Pintos OS kernel (20)
+hda2: 4,096 sectors (2 MB), Pintos file system (21)
+hda3: 230 sectors (115 kB), Pintos scratch (22)
+filesys: using hda2
+scratch: using hda3
+Formatting file system...done.
+Boot complete.
+Extracting ustar archive from scratch device into file system...
+Putting 'rox-multichild' into the file system...
+Putting 'child-rox' into the file system...
+Erasing ustar archive...
+Executing 'rox-multichild':
+(rox-multichild) begin
+(rox-multichild) open "child-rox"
+(rox-multichild) read "child-rox"
+(rox-multichild) write "child-rox"
+(rox-multichild) exec "child-rox 5"
+(child-rox) begin
+(child-rox) try to write "child-rox"
+(child-rox) exec "child-rox 4"
+(child-rox) begin
+(child-rox) try to write "child-rox"
+(child-rox) exec "child-rox 3"
+(child-rox) begin
+(child-rox) try to write "child-rox"
+(child-rox) exec "child-rox 2"
+(child-rox) begin
+(child-rox) try to write "child-rox"
+(child-rox) exec "child-rox 1"
+(child-rox) begin
+(child-rox) try to write "child-rox"
+(child-rox) try to write "child-rox"
+(child-rox) end
+child-rox: exit(12)
+(child-rox) try to write "child-rox"
+(child-rox) end
+child-rox: exit(12)
+(child-rox) try to write "child-rox"
+(child-rox) end
+child-rox: exit(12)
+(child-rox) try to write "child-rox"
+(child-rox) end
+child-rox: exit(12)
+(child-rox) try to write "child-rox"
+(child-rox) end
+child-rox: exit(12)
+(rox-multichild) write "child-rox"
+(rox-multichild) end
+rox-multichild: exit(0)
+Execution of 'rox-multichild' complete.
+Timer: 207 ticks
+Thread: 67 idle ticks, 73 kernel ticks, 68 user ticks
+hda2 (filesys): 347 reads, 468 writes
+hda3 (scratch): 229 reads, 2 writes
+Console: 1908 characters output
+Keyboard: 0 keys pressed
+Exception: 0 page faults
+Powering off...
+perl -I../.. ../../tests/userprog/rox-multichild.ck tests/userprog/rox-multichild tests/userprog/rox-multichild.result
+pass tests/userprog/rox-multichild
+pintos -v -k -T 60 --qemu  --filesys-size=2 -p tests/userprog/bad-read -a bad-read -- -q  -f run bad-read < /dev/null 2> tests/userprog/bad-read.errors |tee tests/userprog/bad-read.output
+Copying tests/userprog/bad-read to scratch partition...
+qemu-system-i386 -device isa-debug-exit -hda /tmp/bwTbKXqrSS.dsk -m 4 -net none -nographic -monitor null
+PiLo hda1
+Loading............
+Kernel command line: -q -f extract run bad-read
+Pintos booting with 3,968 kB RAM...
+367 pages available in kernel pool.
+367 pages available in user pool.
+Calibrating timer...  114,073,600 loops/s.
+hda: 5,040 sectors (2 MB), model "QM00001", serial "QEMU HARDDISK"
+hda1: 207 sectors (103 kB), Pintos OS kernel (20)
+hda2: 4,096 sectors (2 MB), Pintos file system (21)
+hda3: 107 sectors (53 kB), Pintos scratch (22)
+filesys: using hda2
+scratch: using hda3
+Formatting file system...done.
+Boot complete.
+Extracting ustar archive from scratch device into file system...
+Putting 'bad-read' into the file system...
+Erasing ustar archive...
+Executing 'bad-read':
+(bad-read) begin
+bad-read: exit(-1)
+Execution of 'bad-read' complete.
+Timer: 112 ticks
+Thread: 42 idle ticks, 59 kernel ticks, 12 user ticks
+hda2 (filesys): 65 reads, 218 writes
+hda3 (scratch): 106 reads, 2 writes
+Console: 868 characters output
+Keyboard: 0 keys pressed
+Exception: 1 page faults
+Powering off...
+perl -I../.. ../../tests/userprog/bad-read.ck tests/userprog/bad-read tests/userprog/bad-read.result
+pass tests/userprog/bad-read
+pintos -v -k -T 60 --qemu  --filesys-size=2 -p tests/userprog/bad-write -a bad-write -- -q  -f run bad-write < /dev/null 2> tests/userprog/bad-write.errors |tee tests/userprog/bad-write.output
+Copying tests/userprog/bad-write to scratch partition...
+qemu-system-i386 -device isa-debug-exit -hda /tmp/MqiPTwPJ0s.dsk -m 4 -net none -nographic -monitor null
+PiLo hda1
+Loading............
+Kernel command line: -q -f extract run bad-write
+Pintos booting with 3,968 kB RAM...
+367 pages available in kernel pool.
+367 pages available in user pool.
+Calibrating timer...  110,796,800 loops/s.
+hda: 5,040 sectors (2 MB), model "QM00001", serial "QEMU HARDDISK"
+hda1: 207 sectors (103 kB), Pintos OS kernel (20)
+hda2: 4,096 sectors (2 MB), Pintos file system (21)
+hda3: 107 sectors (53 kB), Pintos scratch (22)
+filesys: using hda2
+scratch: using hda3
+Formatting file system...done.
+Boot complete.
+Extracting ustar archive from scratch device into file system...
+Putting 'bad-write' into the file system...
+Erasing ustar archive...
+Executing 'bad-write':
+(bad-write) begin
+bad-write: exit(-1)
+Execution of 'bad-write' complete.
+Timer: 108 ticks
+Thread: 35 idle ticks, 62 kernel ticks, 12 user ticks
+hda2 (filesys): 64 reads, 218 writes
+hda3 (scratch): 106 reads, 2 writes
+Console: 874 characters output
+Keyboard: 0 keys pressed
+Exception: 1 page faults
+Powering off...
+perl -I../.. ../../tests/userprog/bad-write.ck tests/userprog/bad-write tests/userprog/bad-write.result
+pass tests/userprog/bad-write
+pintos -v -k -T 60 --qemu  --filesys-size=2 -p tests/userprog/bad-read2 -a bad-read2 -- -q  -f run bad-read2 < /dev/null 2> tests/userprog/bad-read2.errors |tee tests/userprog/bad-read2.output
+Copying tests/userprog/bad-read2 to scratch partition...
+qemu-system-i386 -device isa-debug-exit -hda /tmp/zA5aukS4DT.dsk -m 4 -net none -nographic -monitor null
+PiLo hda1
+Loading............
+Kernel command line: -q -f extract run bad-read2
+Pintos booting with 3,968 kB RAM...
+367 pages available in kernel pool.
+367 pages available in user pool.
+Calibrating timer...  104,550,400 loops/s.
+hda: 5,040 sectors (2 MB), model "QM00001", serial "QEMU HARDDISK"
+hda1: 207 sectors (103 kB), Pintos OS kernel (20)
+hda2: 4,096 sectors (2 MB), Pintos file system (21)
+hda3: 107 sectors (53 kB), Pintos scratch (22)
+filesys: using hda2
+scratch: using hda3
+Formatting file system...done.
+Boot complete.
+Extracting ustar archive from scratch device into file system...
+Putting 'bad-read2' into the file system...
+Erasing ustar archive...
+Executing 'bad-read2':
+(bad-read2) begin
+bad-read2: exit(-1)
+Execution of 'bad-read2' complete.
+Timer: 106 ticks
+Thread: 45 idle ticks, 51 kernel ticks, 11 user ticks
+hda2 (filesys): 65 reads, 218 writes
+hda3 (scratch): 106 reads, 2 writes
+Console: 874 characters output
+Keyboard: 0 keys pressed
+Exception: 1 page faults
+Powering off...
+perl -I../.. ../../tests/userprog/bad-read2.ck tests/userprog/bad-read2 tests/userprog/bad-read2.result
+pass tests/userprog/bad-read2
+pintos -v -k -T 60 --qemu  --filesys-size=2 -p tests/userprog/bad-write2 -a bad-write2 -- -q  -f run bad-write2 < /dev/null 2> tests/userprog/bad-write2.errors |tee tests/userprog/bad-write2.output
+Copying tests/userprog/bad-write2 to scratch partition...
+qemu-system-i386 -device isa-debug-exit -hda /tmp/0Dq_LNw2HS.dsk -m 4 -net none -nographic -monitor null
+PiLo hda1
+Loading............
+Kernel command line: -q -f extract run bad-write2
+Pintos booting with 3,968 kB RAM...
+367 pages available in kernel pool.
+367 pages available in user pool.
+Calibrating timer...  131,072,000 loops/s.
+hda: 5,040 sectors (2 MB), model "QM00001", serial "QEMU HARDDISK"
+hda1: 207 sectors (103 kB), Pintos OS kernel (20)
+hda2: 4,096 sectors (2 MB), Pintos file system (21)
+hda3: 107 sectors (53 kB), Pintos scratch (22)
+filesys: using hda2
+scratch: using hda3
+Formatting file system...done.
+Boot complete.
+Extracting ustar archive from scratch device into file system...
+Putting 'bad-write2' into the file system...
+Erasing ustar archive...
+Executing 'bad-write2':
+(bad-write2) begin
+bad-write2: exit(-1)
+Execution of 'bad-write2' complete.
+Timer: 113 ticks
+Thread: 41 idle ticks, 62 kernel ticks, 11 user ticks
+hda2 (filesys): 64 reads, 218 writes
+hda3 (scratch): 106 reads, 2 writes
+Console: 880 characters output
+Keyboard: 0 keys pressed
+Exception: 1 page faults
+Powering off...
+perl -I../.. ../../tests/userprog/bad-write2.ck tests/userprog/bad-write2 tests/userprog/bad-write2.result
+pass tests/userprog/bad-write2
+pintos -v -k -T 60 --qemu  --filesys-size=2 -p tests/userprog/bad-jump -a bad-jump -- -q  -f run bad-jump < /dev/null 2> tests/userprog/bad-jump.errors |tee tests/userprog/bad-jump.output
+Copying tests/userprog/bad-jump to scratch partition...
+qemu-system-i386 -device isa-debug-exit -hda /tmp/dY0Ux_qYLE.dsk -m 4 -net none -nographic -monitor null
+PiLo hda1
+Loading............
+Kernel command line: -q -f extract run bad-jump
+Pintos booting with 3,968 kB RAM...
+367 pages available in kernel pool.
+367 pages available in user pool.
+Calibrating timer...  111,206,400 loops/s.
+hda: 5,040 sectors (2 MB), model "QM00001", serial "QEMU HARDDISK"
+hda1: 207 sectors (103 kB), Pintos OS kernel (20)
+hda2: 4,096 sectors (2 MB), Pintos file system (21)
+hda3: 108 sectors (54 kB), Pintos scratch (22)
+filesys: using hda2
+scratch: using hda3
+Formatting file system...done.
+Boot complete.
+Extracting ustar archive from scratch device into file system...
+Putting 'bad-jump' into the file system...
+Erasing ustar archive...
+Executing 'bad-jump':
+(bad-jump) begin
+bad-jump: exit(-1)
+Execution of 'bad-jump' complete.
+Timer: 111 ticks
+Thread: 43 idle ticks, 58 kernel ticks, 11 user ticks
+hda2 (filesys): 65 reads, 220 writes
+hda3 (scratch): 107 reads, 2 writes
+Console: 868 characters output
+Keyboard: 0 keys pressed
+Exception: 1 page faults
+Powering off...
+perl -I../.. ../../tests/userprog/bad-jump.ck tests/userprog/bad-jump tests/userprog/bad-jump.result
+pass tests/userprog/bad-jump
+pintos -v -k -T 60 --qemu  --filesys-size=2 -p tests/userprog/bad-jump2 -a bad-jump2 -- -q  -f run bad-jump2 < /dev/null 2> tests/userprog/bad-jump2.errors |tee tests/userprog/bad-jump2.output
+Copying tests/userprog/bad-jump2 to scratch partition...
+qemu-system-i386 -device isa-debug-exit -hda /tmp/xpR4D4scbp.dsk -m 4 -net none -nographic -monitor null
+PiLo hda1
+Loading............
+Kernel command line: -q -f extract run bad-jump2
+Pintos booting with 3,968 kB RAM...
+367 pages available in kernel pool.
+367 pages available in user pool.
+Calibrating timer...  110,592,000 loops/s.
+hda: 5,040 sectors (2 MB), model "QM00001", serial "QEMU HARDDISK"
+hda1: 207 sectors (103 kB), Pintos OS kernel (20)
+hda2: 4,096 sectors (2 MB), Pintos file system (21)
+hda3: 108 sectors (54 kB), Pintos scratch (22)
+filesys: using hda2
+scratch: using hda3
+Formatting file system...done.
+Boot complete.
+Extracting ustar archive from scratch device into file system...
+Putting 'bad-jump2' into the file system...
+Erasing ustar archive...
+Executing 'bad-jump2':
+(bad-jump2) begin
+bad-jump2: exit(-1)
+Execution of 'bad-jump2' complete.
+Timer: 115 ticks
+Thread: 47 idle ticks, 59 kernel ticks, 10 user ticks
+hda2 (filesys): 65 reads, 220 writes
+hda3 (scratch): 107 reads, 2 writes
+Console: 874 characters output
+Keyboard: 0 keys pressed
+Exception: 1 page faults
+Powering off...
+perl -I../.. ../../tests/userprog/bad-jump2.ck tests/userprog/bad-jump2 tests/userprog/bad-jump2.result
+pass tests/userprog/bad-jump2
+pintos -v -k -T 360 --qemu  --filesys-size=2 -p tests/userprog/no-vm/multi-oom -a multi-oom -- -q  -f run multi-oom < /dev/null 2> tests/userprog/no-vm/multi-oom.errors |tee tests/userprog/no-vm/multi-oom.output
+Copying tests/userprog/no-vm/multi-oom to scratch partition...
+qemu-system-i386 -device isa-debug-exit -hda /tmp/O0_PefWrTF.dsk -m 4 -net none -nographic -monitor null
+PiLo hda1
+Loading............
+Kernel command line: -q -f extract run multi-oom
+Pintos booting with 3,968 kB RAM...
+367 pages available in kernel pool.
+367 pages available in user pool.
+Calibrating timer...  104,755,200 loops/s.
+hda: 5,040 sectors (2 MB), model "QM00001", serial "QEMU HARDDISK"
+hda1: 207 sectors (103 kB), Pintos OS kernel (20)
+hda2: 4,096 sectors (2 MB), Pintos file system (21)
+hda3: 127 sectors (63 kB), Pintos scratch (22)
+filesys: using hda2
+scratch: using hda3
+Formatting file system...done.
+Boot complete.
+Extracting ustar archive from scratch device into file system...
+Putting 'multi-oom' into the file system...
+Erasing ustar archive...
+Executing 'multi-oom':
+(multi-oom) begin
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(-1)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+multi-oom: exit(51)
+(multi-oom) success. program forked 10 times.
+(multi-oom) end
+multi-oom: exit(51)
+Execution of 'multi-oom' complete.
+Timer: 22303 ticks
+Thread: 8417 idle ticks, 373 kernel ticks, 13513 user ticks
+hda2 (filesys): 254645 reads, 258 writes
+hda3 (scratch): 126 reads, 2 writes
+Console: 18148 characters output
+Keyboard: 0 keys pressed
+Exception: 250 page faults
+Powering off...
+perl -I../.. ../../tests/userprog/no-vm/multi-oom.ck tests/userprog/no-vm/multi-oom tests/userprog/no-vm/multi-oom.result
+pass tests/userprog/no-vm/multi-oom
+pintos -v -k -T 60 --qemu  --filesys-size=2 -p tests/filesys/base/lg-create -a lg-create -- -q  -f run lg-create < /dev/null 2> tests/filesys/base/lg-create.errors |tee tests/filesys/base/lg-create.output
+Copying tests/filesys/base/lg-create to scratch partition...
+qemu-system-i386 -device isa-debug-exit -hda /tmp/KfuDNk9oDl.dsk -m 4 -net none -nographic -monitor null
+PiLo hda1
+Loading............
+Kernel command line: -q -f extract run lg-create
+Pintos booting with 3,968 kB RAM...
+367 pages available in kernel pool.
+367 pages available in user pool.
+Calibrating timer...  118,988,800 loops/s.
+hda: 5,040 sectors (2 MB), model "QM00001", serial "QEMU HARDDISK"
+hda1: 207 sectors (103 kB), Pintos OS kernel (20)
+hda2: 4,096 sectors (2 MB), Pintos file system (21)
+hda3: 112 sectors (56 kB), Pintos scratch (22)
+filesys: using hda2
+scratch: using hda3
+Formatting file system...done.
+Boot complete.
+Extracting ustar archive from scratch device into file system...
+Putting 'lg-create' into the file system...
+Erasing ustar archive...
+Executing 'lg-create':
+(lg-create) begin
+(lg-create) create "blargle"
+(lg-create) open "blargle" for verification
+(lg-create) verified contents of "blargle"
+(lg-create) close "blargle"
+(lg-create) end
+lg-create: exit(0)
+Execution of 'lg-create' complete.
+Timer: 149 ticks
+Thread: 56 idle ticks, 60 kernel ticks, 34 user ticks
+hda2 (filesys): 238 reads, 380 writes
+hda3 (scratch): 111 reads, 2 writes
+Console: 1034 characters output
+Keyboard: 0 keys pressed
+Exception: 0 page faults
+Powering off...
+perl -I../.. ../../tests/filesys/base/lg-create.ck tests/filesys/base/lg-create tests/filesys/base/lg-create.result
+pass tests/filesys/base/lg-create
+pintos -v -k -T 60 --qemu  --filesys-size=2 -p tests/filesys/base/lg-full -a lg-full -- -q  -f run lg-full < /dev/null 2> tests/filesys/base/lg-full.errors |tee tests/filesys/base/lg-full.output
+Copying tests/filesys/base/lg-full to scratch partition...
+qemu-system-i386 -device isa-debug-exit -hda /tmp/GTkTyJWyyq.dsk -m 4 -net none -nographic -monitor null
+PiLo hda1
+Loading............
+Kernel command line: -q -f extract run lg-full
+Pintos booting with 3,968 kB RAM...
+367 pages available in kernel pool.
+367 pages available in user pool.
+Calibrating timer...  110,796,800 loops/s.
+hda: 5,040 sectors (2 MB), model "QM00001", serial "QEMU HARDDISK"
+hda1: 207 sectors (103 kB), Pintos OS kernel (20)
+hda2: 4,096 sectors (2 MB), Pintos file system (21)
+hda3: 112 sectors (56 kB), Pintos scratch (22)
+filesys: using hda2
+scratch: using hda3
+Formatting file system...done.
+Boot complete.
+Extracting ustar archive from scratch device into file system...
+Putting 'lg-full' into the file system...
+Erasing ustar archive...
+Executing 'lg-full':
+(lg-full) begin
+(lg-full) create "quux"
+(lg-full) open "quux"
+(lg-full) writing "quux"
+(lg-full) close "quux"
+(lg-full) open "quux" for verification
+(lg-full) verified contents of "quux"
+(lg-full) close "quux"
+(lg-full) end
+lg-full: exit(0)
+Execution of 'lg-full' complete.
+Timer: 170 ticks
+Thread: 70 idle ticks, 56 kernel ticks, 45 user ticks
+hda2 (filesys): 243 reads, 528 writes
+hda3 (scratch): 111 reads, 2 writes
+Console: 1070 characters output
+Keyboard: 0 keys pressed
+Exception: 0 page faults
+Powering off...
+perl -I../.. ../../tests/filesys/base/lg-full.ck tests/filesys/base/lg-full tests/filesys/base/lg-full.result
+pass tests/filesys/base/lg-full
+pintos -v -k -T 60 --qemu  --filesys-size=2 -p tests/filesys/base/lg-random -a lg-random -- -q  -f run lg-random < /dev/null 2> tests/filesys/base/lg-random.errors |tee tests/filesys/base/lg-random.output
+Copying tests/filesys/base/lg-random to scratch partition...
+qemu-system-i386 -device isa-debug-exit -hda /tmp/UZfknXUNGj.dsk -m 4 -net none -nographic -monitor null
+PiLo hda1
+Loading............
+Kernel command line: -q -f extract run lg-random
+Pintos booting with 3,968 kB RAM...
+367 pages available in kernel pool.
+367 pages available in user pool.
+Calibrating timer...  103,936,000 loops/s.
+hda: 5,040 sectors (2 MB), model "QM00001", serial "QEMU HARDDISK"
+hda1: 207 sectors (103 kB), Pintos OS kernel (20)
+hda2: 4,096 sectors (2 MB), Pintos file system (21)
+hda3: 116 sectors (58 kB), Pintos scratch (22)
+filesys: using hda2
+scratch: using hda3
+Formatting file system...done.
+Boot complete.
+Extracting ustar archive from scratch device into file system...
+Putting 'lg-random' into the file system...
+Erasing ustar archive...
+Executing 'lg-random':
+(lg-random) begin
+(lg-random) create "bazzle"
+(lg-random) open "bazzle"
+(lg-random) write "bazzle" in random order
+(lg-random) read "bazzle" in random order
+(lg-random) close "bazzle"
+(lg-random) end
+lg-random: exit(0)
+Execution of 'lg-random' complete.
+Timer: 158 ticks
+Thread: 63 idle ticks, 53 kernel ticks, 43 user ticks
+hda2 (filesys): 243 reads, 540 writes
+hda3 (scratch): 115 reads, 2 writes
+Console: 1056 characters output
+Keyboard: 0 keys pressed
+Exception: 0 page faults
+Powering off...
+perl -I../.. ../../tests/filesys/base/lg-random.ck tests/filesys/base/lg-random tests/filesys/base/lg-random.result
+pass tests/filesys/base/lg-random
+pintos -v -k -T 60 --qemu  --filesys-size=2 -p tests/filesys/base/lg-seq-block -a lg-seq-block -- -q  -f run lg-seq-block < /dev/null 2> tests/filesys/base/lg-seq-block.errors |tee tests/filesys/base/lg-seq-block.output
+Copying tests/filesys/base/lg-seq-block to scratch partition...
+qemu-system-i386 -device isa-debug-exit -hda /tmp/q7YzyxlBMh.dsk -m 4 -net none -nographic -monitor null
+PiLo hda1
+Loading............
+Kernel command line: -q -f extract run lg-seq-block
+Pintos booting with 3,968 kB RAM...
+367 pages available in kernel pool.
+367 pages available in user pool.
+Calibrating timer...  118,169,600 loops/s.
+hda: 5,040 sectors (2 MB), model "QM00001", serial "QEMU HARDDISK"
+hda1: 207 sectors (103 kB), Pintos OS kernel (20)
+hda2: 4,096 sectors (2 MB), Pintos file system (21)
+hda3: 112 sectors (56 kB), Pintos scratch (22)
+filesys: using hda2
+scratch: using hda3
+Formatting file system...done.
+Boot complete.
+Extracting ustar archive from scratch device into file system...
+Putting 'lg-seq-block' into the file system...
+Erasing ustar archive...
+Executing 'lg-seq-block':
+(lg-seq-block) begin
+(lg-seq-block) create "noodle"
+(lg-seq-block) open "noodle"
+(lg-seq-block) writing "noodle"
+(lg-seq-block) close "noodle"
+(lg-seq-block) open "noodle" for verification
+(lg-seq-block) verified contents of "noodle"
+(lg-seq-block) close "noodle"
+(lg-seq-block) end
+lg-seq-block: exit(0)
+Execution of 'lg-seq-block' complete.
+Timer: 207 ticks
+Thread: 85 idle ticks, 64 kernel ticks, 59 user ticks
+hda2 (filesys): 536 reads, 675 writes
+hda3 (scratch): 111 reads, 2 writes
+Console: 1154 characters output
+Keyboard: 0 keys pressed
+Exception: 0 page faults
+Powering off...
+perl -I../.. ../../tests/filesys/base/lg-seq-block.ck tests/filesys/base/lg-seq-block tests/filesys/base/lg-seq-block.result
+pass tests/filesys/base/lg-seq-block
+pintos -v -k -T 60 --qemu  --filesys-size=2 -p tests/filesys/base/lg-seq-random -a lg-seq-random -- -q  -f run lg-seq-random < /dev/null 2> tests/filesys/base/lg-seq-random.errors |tee tests/filesys/base/lg-seq-random.output
+Copying tests/filesys/base/lg-seq-random to scratch partition...
+qemu-system-i386 -device isa-debug-exit -hda /tmp/kXMZ1nb4Kf.dsk -m 4 -net none -nographic -monitor null
+PiLo hda1
+Loading............
+Kernel command line: -q -f extract run lg-seq-random
+Pintos booting with 3,968 kB RAM...
+367 pages available in kernel pool.
+367 pages available in user pool.
+Calibrating timer...  111,001,600 loops/s.
+hda: 5,040 sectors (2 MB), model "QM00001", serial "QEMU HARDDISK"
+hda1: 207 sectors (103 kB), Pintos OS kernel (20)
+hda2: 4,096 sectors (2 MB), Pintos file system (21)
+hda3: 112 sectors (56 kB), Pintos scratch (22)
+filesys: using hda2
+scratch: using hda3
+Formatting file system...done.
+Boot complete.
+Extracting ustar archive from scratch device into file system...
+Putting 'lg-seq-random' into the file system...
+Erasing ustar archive...
+Executing 'lg-seq-random':
+(lg-seq-random) begin
+(lg-seq-random) create "nibble"
+(lg-seq-random) open "nibble"
+(lg-seq-random) writing "nibble"
+(lg-seq-random) close "nibble"
+(lg-seq-random) open "nibble" for verification
+(lg-seq-random) verified contents of "nibble"
+(lg-seq-random) close "nibble"
+(lg-seq-random) end
+lg-seq-random: exit(0)
+Execution of 'lg-seq-random' complete.
+Timer: 192 ticks
+Thread: 72 idle ticks, 63 kernel ticks, 58 user ticks
+hda2 (filesys): 506 reads, 680 writes
+hda3 (scratch): 111 reads, 2 writes
+Console: 1168 characters output
+Keyboard: 0 keys pressed
+Exception: 0 page faults
+Powering off...
+perl -I../.. ../../tests/filesys/base/lg-seq-random.ck tests/filesys/base/lg-seq-random tests/filesys/base/lg-seq-random.result
+pass tests/filesys/base/lg-seq-random
+pintos -v -k -T 60 --qemu  --filesys-size=2 -p tests/filesys/base/sm-create -a sm-create -- -q  -f run sm-create < /dev/null 2> tests/filesys/base/sm-create.errors |tee tests/filesys/base/sm-create.output
+Copying tests/filesys/base/sm-create to scratch partition...
+qemu-system-i386 -device isa-debug-exit -hda /tmp/7oHIqAImSA.dsk -m 4 -net none -nographic -monitor null
+PiLo hda1
+Loading............
+Kernel command line: -q -f extract run sm-create
+Pintos booting with 3,968 kB RAM...
+367 pages available in kernel pool.
+367 pages available in user pool.
+Calibrating timer...  132,710,400 loops/s.
+hda: 5,040 sectors (2 MB), model "QM00001", serial "QEMU HARDDISK"
+hda1: 207 sectors (103 kB), Pintos OS kernel (20)
+hda2: 4,096 sectors (2 MB), Pintos file system (21)
+hda3: 112 sectors (56 kB), Pintos scratch (22)
+filesys: using hda2
+scratch: using hda3
+Formatting file system...done.
+Boot complete.
+Extracting ustar archive from scratch device into file system...
+Putting 'sm-create' into the file system...
+Erasing ustar archive...
+Executing 'sm-create':
+(sm-create) begin
+(sm-create) create "blargle"
+(sm-create) open "blargle" for verification
+(sm-create) verified contents of "blargle"
+(sm-create) close "blargle"
+(sm-create) end
+sm-create: exit(0)
+Execution of 'sm-create' complete.
+Timer: 131 ticks
+Thread: 46 idle ticks, 62 kernel ticks, 24 user ticks
+hda2 (filesys): 102 reads, 244 writes
+hda3 (scratch): 111 reads, 2 writes
+Console: 1034 characters output
+Keyboard: 0 keys pressed
+Exception: 0 page faults
+Powering off...
+perl -I../.. ../../tests/filesys/base/sm-create.ck tests/filesys/base/sm-create tests/filesys/base/sm-create.result
+pass tests/filesys/base/sm-create
+pintos -v -k -T 60 --qemu  --filesys-size=2 -p tests/filesys/base/sm-full -a sm-full -- -q  -f run sm-full < /dev/null 2> tests/filesys/base/sm-full.errors |tee tests/filesys/base/sm-full.output
+Copying tests/filesys/base/sm-full to scratch partition...
+qemu-system-i386 -device isa-debug-exit -hda /tmp/ufzV_reMZi.dsk -m 4 -net none -nographic -monitor null
+PiLo hda1
+Loading............
+Kernel command line: -q -f extract run sm-full
+Pintos booting with 3,968 kB RAM...
+367 pages available in kernel pool.
+367 pages available in user pool.
+Calibrating timer...  110,592,000 loops/s.
+hda: 5,040 sectors (2 MB), model "QM00001", serial "QEMU HARDDISK"
+hda1: 207 sectors (103 kB), Pintos OS kernel (20)
+hda2: 4,096 sectors (2 MB), Pintos file system (21)
+hda3: 112 sectors (56 kB), Pintos scratch (22)
+filesys: using hda2
+scratch: using hda3
+Formatting file system...done.
+Boot complete.
+Extracting ustar archive from scratch device into file system...
+Putting 'sm-full' into the file system...
+Erasing ustar archive...
+Executing 'sm-full':
+(sm-full) begin
+(sm-full) create "quux"
+(sm-full) open "quux"
+(sm-full) writing "quux"
+(sm-full) close "quux"
+(sm-full) open "quux" for verification
+(sm-full) verified contents of "quux"
+(sm-full) close "quux"
+(sm-full) end
+sm-full: exit(0)
+Execution of 'sm-full' complete.
+Timer: 129 ticks
+Thread: 46 idle ticks, 55 kernel ticks, 29 user ticks
+hda2 (filesys): 107 reads, 256 writes
+hda3 (scratch): 111 reads, 2 writes
+Console: 1070 characters output
+Keyboard: 0 keys pressed
+Exception: 0 page faults
+Powering off...
+perl -I../.. ../../tests/filesys/base/sm-full.ck tests/filesys/base/sm-full tests/filesys/base/sm-full.result
+pass tests/filesys/base/sm-full
+pintos -v -k -T 60 --qemu  --filesys-size=2 -p tests/filesys/base/sm-random -a sm-random -- -q  -f run sm-random < /dev/null 2> tests/filesys/base/sm-random.errors |tee tests/filesys/base/sm-random.output
+Copying tests/filesys/base/sm-random to scratch partition...
+qemu-system-i386 -device isa-debug-exit -hda /tmp/JcKv7BM1_T.dsk -m 4 -net none -nographic -monitor null
+PiLo hda1
+Loading............
+Kernel command line: -q -f extract run sm-random
+Pintos booting with 3,968 kB RAM...
+367 pages available in kernel pool.
+367 pages available in user pool.
+Calibrating timer...  117,350,400 loops/s.
+hda: 5,040 sectors (2 MB), model "QM00001", serial "QEMU HARDDISK"
+hda1: 207 sectors (103 kB), Pintos OS kernel (20)
+hda2: 4,096 sectors (2 MB), Pintos file system (21)
+hda3: 116 sectors (58 kB), Pintos scratch (22)
+filesys: using hda2
+scratch: using hda3
+Formatting file system...done.
+Boot complete.
+Extracting ustar archive from scratch device into file system...
+Putting 'sm-random' into the file system...
+Erasing ustar archive...
+Executing 'sm-random':
+(sm-random) begin
+(sm-random) create "bazzle"
+(sm-random) open "bazzle"
+(sm-random) write "bazzle" in random order
+(sm-random) read "bazzle" in random order
+(sm-random) close "bazzle"
+(sm-random) end
+sm-random: exit(0)
+Execution of 'sm-random' complete.
+Timer: 150 ticks
+Thread: 53 idle ticks, 56 kernel ticks, 42 user ticks
+hda2 (filesys): 345 reads, 370 writes
+hda3 (scratch): 115 reads, 2 writes
+Console: 1056 characters output
+Keyboard: 0 keys pressed
+Exception: 0 page faults
+Powering off...
+perl -I../.. ../../tests/filesys/base/sm-random.ck tests/filesys/base/sm-random tests/filesys/base/sm-random.result
+pass tests/filesys/base/sm-random
+pintos -v -k -T 60 --qemu  --filesys-size=2 -p tests/filesys/base/sm-seq-block -a sm-seq-block -- -q  -f run sm-seq-block < /dev/null 2> tests/filesys/base/sm-seq-block.errors |tee tests/filesys/base/sm-seq-block.output
+Copying tests/filesys/base/sm-seq-block to scratch partition...
+qemu-system-i386 -device isa-debug-exit -hda /tmp/O9VIKk10C7.dsk -m 4 -net none -nographic -monitor null
+PiLo hda1
+Loading............
+Kernel command line: -q -f extract run sm-seq-block
+Pintos booting with 3,968 kB RAM...
+367 pages available in kernel pool.
+367 pages available in user pool.
+Calibrating timer...  108,544,000 loops/s.
+hda: 5,040 sectors (2 MB), model "QM00001", serial "QEMU HARDDISK"
+hda1: 207 sectors (103 kB), Pintos OS kernel (20)
+hda2: 4,096 sectors (2 MB), Pintos file system (21)
+hda3: 112 sectors (56 kB), Pintos scratch (22)
+filesys: using hda2
+scratch: using hda3
+Formatting file system...done.
+Boot complete.
+Extracting ustar archive from scratch device into file system...
+Putting 'sm-seq-block' into the file system...
+Erasing ustar archive...
+Executing 'sm-seq-block':
+(sm-seq-block) begin
+(sm-seq-block) create "noodle"
+(sm-seq-block) open "noodle"
+(sm-seq-block) writing "noodle"
+(sm-seq-block) close "noodle"
+(sm-seq-block) open "noodle" for verification
+(sm-seq-block) verified contents of "noodle"
+(sm-seq-block) close "noodle"
+(sm-seq-block) end
+sm-seq-block: exit(0)
+Execution of 'sm-seq-block' complete.
+Timer: 141 ticks
+Thread: 51 idle ticks, 66 kernel ticks, 25 user ticks
+hda2 (filesys): 128 reads, 267 writes
+hda3 (scratch): 111 reads, 2 writes
+Console: 1154 characters output
+Keyboard: 0 keys pressed
+Exception: 0 page faults
+Powering off...
+perl -I../.. ../../tests/filesys/base/sm-seq-block.ck tests/filesys/base/sm-seq-block tests/filesys/base/sm-seq-block.result
+pass tests/filesys/base/sm-seq-block
+pintos -v -k -T 60 --qemu  --filesys-size=2 -p tests/filesys/base/sm-seq-random -a sm-seq-random -- -q  -f run sm-seq-random < /dev/null 2> tests/filesys/base/sm-seq-random.errors |tee tests/filesys/base/sm-seq-random.output
+Copying tests/filesys/base/sm-seq-random to scratch partition...
+qemu-system-i386 -device isa-debug-exit -hda /tmp/d7Pq2rZ2W7.dsk -m 4 -net none -nographic -monitor null
+PiLo hda1
+Loading............
+Kernel command line: -q -f extract run sm-seq-random
+Pintos booting with 3,968 kB RAM...
+367 pages available in kernel pool.
+367 pages available in user pool.
+Calibrating timer...  107,520,000 loops/s.
+hda: 5,040 sectors (2 MB), model "QM00001", serial "QEMU HARDDISK"
+hda1: 207 sectors (103 kB), Pintos OS kernel (20)
+hda2: 4,096 sectors (2 MB), Pintos file system (21)
+hda3: 112 sectors (56 kB), Pintos scratch (22)
+filesys: using hda2
+scratch: using hda3
+Formatting file system...done.
+Boot complete.
+Extracting ustar archive from scratch device into file system...
+Putting 'sm-seq-random' into the file system...
+Erasing ustar archive...
+Executing 'sm-seq-random':
+(sm-seq-random) begin
+(sm-seq-random) create "nibble"
+(sm-seq-random) open "nibble"
+(sm-seq-random) writing "nibble"
+(sm-seq-random) close "nibble"
+(sm-seq-random) open "nibble" for verification
+(sm-seq-random) verified contents of "nibble"
+(sm-seq-random) close "nibble"
+(sm-seq-random) end
+sm-seq-random: exit(0)
+Execution of 'sm-seq-random' complete.
+Timer: 133 ticks
+Thread: 48 idle ticks, 58 kernel ticks, 28 user ticks
+hda2 (filesys): 121 reads, 264 writes
+hda3 (scratch): 111 reads, 2 writes
+Console: 1168 characters output
+Keyboard: 0 keys pressed
+Exception: 0 page faults
+Powering off...
+perl -I../.. ../../tests/filesys/base/sm-seq-random.ck tests/filesys/base/sm-seq-random tests/filesys/base/sm-seq-random.result
+pass tests/filesys/base/sm-seq-random
+pintos -v -k -T 300 --qemu  --filesys-size=2 -p tests/filesys/base/syn-read -a syn-read -p tests/filesys/base/child-syn-read -a child-syn-read -- -q  -f run syn-read < /dev/null 2> tests/filesys/base/syn-read.errors |tee tests/filesys/base/syn-read.output
+Copying tests/filesys/base/syn-read to scratch partition...
+Copying tests/filesys/base/child-syn-read to scratch partition...
+qemu-system-i386 -device isa-debug-exit -hda /tmp/5fznzbjJJt.dsk -m 4 -net none -nographic -monitor null
+PiLo hda1
+Loading............
+Kernel command line: -q -f extract run syn-read
+Pintos booting with 3,968 kB RAM...
+367 pages available in kernel pool.
+367 pages available in user pool.
+Calibrating timer...  107,929,600 loops/s.
+hda: 5,040 sectors (2 MB), model "QM00001", serial "QEMU HARDDISK"
+hda1: 207 sectors (103 kB), Pintos OS kernel (20)
+hda2: 4,096 sectors (2 MB), Pintos file system (21)
+hda3: 238 sectors (119 kB), Pintos scratch (22)
+filesys: using hda2
+scratch: using hda3
+Formatting file system...done.
+Boot complete.
+Extracting ustar archive from scratch device into file system...
+Putting 'syn-read' into the file system...
+Putting 'child-syn-read' into the file system...
+Erasing ustar archive...
+Executing 'syn-read':
+(syn-read) begin
+(syn-read) create "data"
+(syn-read) open "data"
+(syn-read) write "data"
+(syn-read) close "data"
+(syn-read) exec child 1 of 10: "child-syn-read 0"
+(syn-read) exec child 2 of 10: "child-syn-read 1"
+child-syn-read: exit(0)
+(syn-read) exec child 3 of 10: "child-syn-read 2"
+child-syn-read: exit(1)
+(syn-read) exec child 4 of 10: "child-syn-read 3"
+child-syn-read: exit(2)
+(syn-read) exec child 5 of 10: "child-syn-read 4"
+child-syn-read: exit(3)
+(syn-read) exec child 6 of 10: "child-syn-read 5"
+child-syn-read: exit(4)
+(syn-read) exec child 7 of 10: "child-syn-read 6"
+child-syn-read: exit(5)
+(syn-read) exec child 8 of 10: "child-syn-read 7"
+child-syn-read: exit(6)
+(syn-read) exec child 9 of 10: "child-syn-read 8"
+child-syn-read: exit(7)
+(syn-read) exec child 10 of 10: "child-syn-read 9"
+child-syn-read: exit(8)
+(syn-read) wait for child 1 of 10 returned 0 (expected 0)
+(syn-read) wait for child 2 of 10 returned 1 (expected 1)
+(syn-read) wait for child 3 of 10 returned 2 (expected 2)
+(syn-read) wait for child 4 of 10 returned 3 (expected 3)
+(syn-read) wait for child 5 of 10 returned 4 (expected 4)
+(syn-read) wait for child 6 of 10 returned 5 (expected 5)
+(syn-read) wait for child 7 of 10 returned 6 (expected 6)
+(syn-read) wait for child 8 of 10 returned 7 (expected 7)
+(syn-read) wait for child 9 of 10 returned 8 (expected 8)
+child-syn-read: exit(9)
+(syn-read) wait for child 10 of 10 returned 9 (expected 9)
+(syn-read) end
+syn-read: exit(0)
+Execution of 'syn-read' complete.
+Timer: 1093 ticks
+Thread: 464 idle ticks, 73 kernel ticks, 557 user ticks
+hda2 (filesys): 10859 reads, 490 writes
+hda3 (scratch): 237 reads, 2 writes
+Console: 2356 characters output
+Keyboard: 0 keys pressed
+Exception: 0 page faults
+Powering off...
+perl -I../.. ../../tests/filesys/base/syn-read.ck tests/filesys/base/syn-read tests/filesys/base/syn-read.result
+pass tests/filesys/base/syn-read
+pintos -v -k -T 60 --qemu  --filesys-size=2 -p tests/filesys/base/syn-remove -a syn-remove -- -q  -f run syn-remove < /dev/null 2> tests/filesys/base/syn-remove.errors |tee tests/filesys/base/syn-remove.output
+Copying tests/filesys/base/syn-remove to scratch partition...
+qemu-system-i386 -device isa-debug-exit -hda /tmp/0pdJLVm7KB.dsk -m 4 -net none -nographic -monitor null
+PiLo hda1
+Loading............
+Kernel command line: -q -f extract run syn-remove
+Pintos booting with 3,968 kB RAM...
+367 pages available in kernel pool.
+367 pages available in user pool.
+Calibrating timer...  118,169,600 loops/s.
+hda: 5,040 sectors (2 MB), model "QM00001", serial "QEMU HARDDISK"
+hda1: 207 sectors (103 kB), Pintos OS kernel (20)
+hda2: 4,096 sectors (2 MB), Pintos file system (21)
+hda3: 115 sectors (57 kB), Pintos scratch (22)
+filesys: using hda2
+scratch: using hda3
+Formatting file system...done.
+Boot complete.
+Extracting ustar archive from scratch device into file system...
+Putting 'syn-remove' into the file system...
+Erasing ustar archive...
+Executing 'syn-remove':
+(syn-remove) begin
+(syn-remove) create "deleteme"
+(syn-remove) open "deleteme"
+(syn-remove) remove "deleteme"
+(syn-remove) write "deleteme"
+(syn-remove) seek "deleteme" to 0
+(syn-remove) read "deleteme"
+(syn-remove) close "deleteme"
+(syn-remove) end
+syn-remove: exit(0)
+Execution of 'syn-remove' complete.
+Timer: 137 ticks
+Thread: 50 idle ticks, 63 kernel ticks, 25 user ticks
+hda2 (filesys): 99 reads, 247 writes
+hda3 (scratch): 114 reads, 2 writes
+Console: 1110 characters output
+Keyboard: 0 keys pressed
+Exception: 0 page faults
+Powering off...
+perl -I../.. ../../tests/filesys/base/syn-remove.ck tests/filesys/base/syn-remove tests/filesys/base/syn-remove.result
+pass tests/filesys/base/syn-remove
+pintos -v -k -T 60 --qemu  --filesys-size=2 -p tests/filesys/base/syn-write -a syn-write -p tests/filesys/base/child-syn-wrt -a child-syn-wrt -- -q  -f run syn-write < /dev/null 2> tests/filesys/base/syn-write.errors |tee tests/filesys/base/syn-write.output
+Copying tests/filesys/base/syn-write to scratch partition...
+Copying tests/filesys/base/child-syn-wrt to scratch partition...
+qemu-system-i386 -device isa-debug-exit -hda /tmp/_37iq5usoA.dsk -m 4 -net none -nographic -monitor null
+PiLo hda1
+Loading............
+Kernel command line: -q -f extract run syn-write
+Pintos booting with 3,968 kB RAM...
+367 pages available in kernel pool.
+367 pages available in user pool.
+Calibrating timer...  121,651,200 loops/s.
+hda: 5,040 sectors (2 MB), model "QM00001", serial "QEMU HARDDISK"
+hda1: 207 sectors (103 kB), Pintos OS kernel (20)
+hda2: 4,096 sectors (2 MB), Pintos file system (21)
+hda3: 237 sectors (118 kB), Pintos scratch (22)
+filesys: using hda2
+scratch: using hda3
+Formatting file system...done.
+Boot complete.
+Extracting ustar archive from scratch device into file system...
+Putting 'syn-write' into the file system...
+Putting 'child-syn-wrt' into the file system...
+Erasing ustar archive...
+Executing 'syn-write':
+(syn-write) begin
+(syn-write) create "stuff"
+(syn-write) exec child 1 of 10: "child-syn-wrt 0"
+(syn-write) exec child 2 of 10: "child-syn-wrt 1"
+child-syn-wrt: exit(0)
+(syn-write) exec child 3 of 10: "child-syn-wrt 2"
+child-syn-wrt: exit(1)
+(syn-write) exec child 4 of 10: "child-syn-wrt 3"
+child-syn-wrt: exit(2)
+(syn-write) exec child 5 of 10: "child-syn-wrt 4"
+child-syn-wrt: exit(3)
+(syn-write) exec child 6 of 10: "child-syn-wrt 5"
+child-syn-wrt: exit(4)
+(syn-write) exec child 7 of 10: "child-syn-wrt 6"
+child-syn-wrt: exit(5)
+(syn-write) exec child 8 of 10: "child-syn-wrt 7"
+child-syn-wrt: exit(6)
+(syn-write) exec child 9 of 10: "child-syn-wrt 8"
+child-syn-wrt: exit(7)
+(syn-write) exec child 10 of 10: "child-syn-wrt 9"
+child-syn-wrt: exit(8)
+(syn-write) wait for child 1 of 10 returned 0 (expected 0)
+(syn-write) wait for child 2 of 10 returned 1 (expected 1)
+(syn-write) wait for child 3 of 10 returned 2 (expected 2)
+(syn-write) wait for child 4 of 10 returned 3 (expected 3)
+(syn-write) wait for child 5 of 10 returned 4 (expected 4)
+(syn-write) wait for child 6 of 10 returned 5 (expected 5)
+(syn-write) wait for child 7 of 10 returned 6 (expected 6)
+(syn-write) wait for child 8 of 10 returned 7 (expected 7)
+(syn-write) wait for child 9 of 10 returned 8 (expected 8)
+child-syn-wrt: exit(9)
+(syn-write) wait for child 10 of 10 returned 9 (expected 9)
+(syn-write) open "stuff"
+(syn-write) read "stuff"
+(syn-write) end
+syn-write: exit(0)
+Execution of 'syn-write' complete.
+Timer: 240 ticks
+Thread: 74 idle ticks, 79 kernel ticks, 88 user ticks
+hda2 (filesys): 629 reads, 504 writes
+hda3 (scratch): 236 reads, 2 writes
+Console: 2338 characters output
+Keyboard: 0 keys pressed
+Exception: 0 page faults
+Powering off...
+perl -I../.. ../../tests/filesys/base/syn-write.ck tests/filesys/base/syn-write tests/filesys/base/syn-write.result
+pass tests/filesys/base/syn-write
+pass tests/userprog/args-none
+pass tests/userprog/args-single
+pass tests/userprog/args-multiple
+pass tests/userprog/args-many
+pass tests/userprog/args-dbl-space
+pass tests/userprog/sc-bad-sp
+pass tests/userprog/sc-bad-arg
+pass tests/userprog/sc-boundary
+pass tests/userprog/sc-boundary-2
+pass tests/userprog/sc-boundary-3
+pass tests/userprog/halt
+pass tests/userprog/exit
+pass tests/userprog/create-normal
+pass tests/userprog/create-empty
+pass tests/userprog/create-null
+pass tests/userprog/create-bad-ptr
+pass tests/userprog/create-long
+pass tests/userprog/create-exists
+pass tests/userprog/create-bound
+pass tests/userprog/open-normal
+pass tests/userprog/open-missing
+pass tests/userprog/open-boundary
+pass tests/userprog/open-empty
+pass tests/userprog/open-null
+pass tests/userprog/open-bad-ptr
+pass tests/userprog/open-twice
+pass tests/userprog/close-normal
+pass tests/userprog/close-twice
+pass tests/userprog/close-stdin
+pass tests/userprog/close-stdout
+pass tests/userprog/close-bad-fd
+pass tests/userprog/read-normal
+pass tests/userprog/read-bad-ptr
+pass tests/userprog/read-boundary
+pass tests/userprog/read-zero
+pass tests/userprog/read-stdout
+pass tests/userprog/read-bad-fd
+pass tests/userprog/write-normal
+pass tests/userprog/write-bad-ptr
+pass tests/userprog/write-boundary
+pass tests/userprog/write-zero
+pass tests/userprog/write-stdin
+pass tests/userprog/write-bad-fd
+pass tests/userprog/exec-once
+pass tests/userprog/exec-arg
+pass tests/userprog/exec-bound
+pass tests/userprog/exec-bound-2
+pass tests/userprog/exec-bound-3
+pass tests/userprog/exec-multiple
+pass tests/userprog/exec-missing
+pass tests/userprog/exec-bad-ptr
+pass tests/userprog/wait-simple
+pass tests/userprog/wait-twice
+pass tests/userprog/wait-killed
+pass tests/userprog/wait-bad-pid
+pass tests/userprog/multi-recurse
+pass tests/userprog/multi-child-fd
+pass tests/userprog/rox-simple
+pass tests/userprog/rox-child
+pass tests/userprog/rox-multichild
+pass tests/userprog/bad-read
+pass tests/userprog/bad-write
+pass tests/userprog/bad-read2
+pass tests/userprog/bad-write2
+pass tests/userprog/bad-jump
+pass tests/userprog/bad-jump2
+pass tests/userprog/no-vm/multi-oom
+pass tests/filesys/base/lg-create
+pass tests/filesys/base/lg-full
+pass tests/filesys/base/lg-random
+pass tests/filesys/base/lg-seq-block
+pass tests/filesys/base/lg-seq-random
+pass tests/filesys/base/sm-create
+pass tests/filesys/base/sm-full
+pass tests/filesys/base/sm-random
+pass tests/filesys/base/sm-seq-block
+pass tests/filesys/base/sm-seq-random
+pass tests/filesys/base/syn-read
+pass tests/filesys/base/syn-remove
+pass tests/filesys/base/syn-write
+All 80 tests passed.
